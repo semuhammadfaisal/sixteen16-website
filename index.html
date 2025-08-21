@@ -1,0 +1,3697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sixteen16 – Premium Mineral Water in Pakistan</title>
+  <meta name="description" content="sixteen16 delivers premium mineral water across Pakistan. Order small and large bottles with fast delivery and quality you can trust." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="sixteen16 – Premium Mineral Water" />
+  <meta property="og:description" content="Order small & large bottles, Pakistan‑wide delivery." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+  <style>
+    /* ---------------------- CSS RESET ---------------------- */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    :root{
+      --primary:#0ea5e9;      /* Sky blue */
+      --primary-dark:#0284c7;
+      --text:#0f172a;         /* Slate-900 */
+      --muted:#64748b;        /* Slate-500 */
+      --bg:#ffffff;
+      --bg-soft:#f0f9ff;      /* Sky-50 */
+      --success:#16a34a;      /* Green-600 */
+      --warning:#f59e0b;      /* Amber-500 */
+      --danger:#ef4444;       /* Red-500 */
+      --radius:16px;
+      --shadow:0 10px 25px rgba(2,132,199,.15);
+    }
+
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color:var(--text); background:var(--bg); line-height:1.6}
+    .container{max-width:1140px;margin:0 auto;padding:0 20px}
+
+    /* ---------------------- ENHANCED HEADER ---------------------- */
+    /* Brand Hover Effects */
+    .brand:hover .brand-logo {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+    }
+
+    .brand:hover .brand-text {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Navigation Link Effects */
+    .nav-link:hover {
+      color: #0ea5e9 !important;
+      background: rgba(14, 165, 233, 0.1) !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+    }
+
+    /* CTA Button Effects */
+    .call-btn:hover {
+      border-color: #0ea5e9 !important;
+      color: #0ea5e9 !important;
+      background: rgba(14, 165, 233, 0.05) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.2);
+    }
+
+    .order-btn:hover {
+      background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4) !important;
+    }
+
+    /* Mobile Menu Toggle Animation */
+    .mobile-menu-toggle:hover {
+      border-color: #0ea5e9 !important;
+      background: rgba(14, 165, 233, 0.05) !important;
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile Navigation Links */
+    .mobile-nav-link:hover {
+      background: rgba(14, 165, 233, 0.1) !important;
+      color: #0ea5e9 !important;
+      transform: translateX(8px);
+    }
+
+    .mobile-call-btn:hover {
+      border-color: #0ea5e9 !important;
+      color: #0ea5e9 !important;
+      background: rgba(14, 165, 233, 0.05) !important;
+    }
+
+    .mobile-order-btn:hover {
+      background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4) !important;
+    }
+
+    /* Enhanced Mobile Navigation */
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none !important;
+      }
+
+      .mobile-menu-toggle {
+        display: flex !important;
+      }
+
+      .call-text,
+      .order-text {
+        display: none;
+      }
+
+      .call-btn,
+      .order-btn {
+        padding: 10px !important;
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        height: 64px !important;
+      }
+
+      .brand {
+        font-size: 1.3rem !important;
+      }
+
+      .brand-logo {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+      }
+
+      .nav-cta {
+        gap: 8px !important;
+      }
+
+      .call-btn,
+      .order-btn {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 8px !important;
+      }
+
+      .call-btn svg,
+      .order-btn svg {
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      .mobile-menu-toggle {
+        width: 40px !important;
+        height: 40px !important;
+      }
+
+      .mobile-menu .container {
+        padding: 20px 16px !important;
+      }
+
+      .mobile-nav-link {
+        padding: 14px 16px !important;
+        font-size: 0.95rem !important;
+      }
+
+      .mobile-call-btn,
+      .mobile-order-btn {
+        padding: 12px 14px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        height: 56px !important;
+      }
+
+      .brand {
+        font-size: 1.2rem !important;
+        gap: 8px !important;
+      }
+
+      .brand-logo {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.9rem !important;
+      }
+
+      .nav-cta {
+        gap: 6px !important;
+      }
+
+      .call-btn,
+      .order-btn {
+        width: 36px !important;
+        height: 36px !important;
+        padding: 6px !important;
+      }
+
+      .call-btn svg,
+      .order-btn svg {
+        width: 14px !important;
+        height: 14px !important;
+      }
+
+      .mobile-menu-toggle {
+        width: 36px !important;
+        height: 36px !important;
+      }
+
+      .hamburger-line {
+        width: 16px !important;
+      }
+
+      .mobile-menu .container {
+        padding: 16px 12px !important;
+      }
+
+      .mobile-nav-link {
+        padding: 12px 14px !important;
+        font-size: 0.9rem !important;
+      }
+
+      .mobile-cta {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+
+      .mobile-call-btn,
+      .mobile-order-btn {
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+
+    /* ---------------------- HERO ---------------------- */
+    .hero{position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(1200px 500px at 70% -10%, rgba(14,165,233,.35), transparent 60%),linear-gradient(180deg,#e0f2fe,transparent 50%)}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;padding:70px 0}
+    .tag{display:inline-flex;align-items:center;gap:8px;background:#e0f2fe;border:1px solid #bae6fd;color:#0369a1;padding:6px 12px;border-radius:999px;font-weight:700;font-size:12px}
+    .hero h1{font-size:48px;line-height:1.1;margin:14px 0 10px}
+    .hero p{color:var(--muted);font-size:18px}
+    .hero-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+    .hero-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .hero-visual{position:relative}
+    .bottle{width:100%;aspect-ratio:3/5;border-radius:24px;background:linear-gradient(180deg,#f0f9ff,#e0f2fe);border:1px solid #bae6fd;box-shadow:0 30px 50px rgba(2,132,199,.25);position:relative;overflow:hidden}
+    .bottle::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 120px at 40% 0%, rgba(255,255,255,.8), transparent 60%),radial-gradient(600px 120px at 60% 0%, rgba(255,255,255,.6), transparent 60%)}
+    .stamp{position:absolute;bottom:-12px;right:-12px;background:#0ea5e9;color:#fff;padding:18px 22px;border-radius:999px;font-weight:900;transform:rotate(-12deg);box-shadow:var(--shadow)}
+    
+    /* Mobile Hero */
+    @media (max-width: 900px) {
+      .hero {
+        padding: 0;
+        margin: 0;
+      }
+      .hero::before {
+        display: none;
+      }
+      .hero-inner {
+        display: none;
+      }
+      .mobile-hero { 
+        display: block; 
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+      }
+      .mobile-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .mobile-bottle {
+        display: none;
+      }
+    }
+    .mobile-bottle::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(400px 100px at 40% 0%, rgba(255,255,255,.8), transparent 60%),
+                  radial-gradient(400px 100px at 60% 0%, rgba(255,255,255,.6), transparent 60%);
+    }
+
+    @media (max-width: 900px) {
+      /* Hide desktop hero on mobile */
+      .hero-inner { display: none; }
+      
+      /* Show mobile hero */
+      .mobile-hero {
+        display: block;
+        text-align: center;
+      }
+      .mobile-bottle {
+        display: block;
+      }
+      .mobile-hero h1 {
+        font-size: 32px;
+        margin: 20px 0 15px;
+        line-height: 1.2;
+      }
+      .mobile-hero p {
+        font-size: 16px;
+        color: var(--muted);
+        max-width: 500px;
+        margin: 0 auto 25px;
+      }
+      .hero-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 25px auto 0;
+      }
+    }
+
+    /* ---------------------- SECTIONS ---------------------- */
+    section{padding:70px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:24px;gap:16px}
+    .section-head h2{font-size:32px;margin:0}
+    .section-sub{color:var(--muted);max-width:650px}
+
+    /* ---------------------- PRODUCTS ---------------------- */
+    .grid{display:grid;gap:20px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+    .card-body{padding:18px}
+    .price{font-weight:900;font-size:28px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid #cbd5e1;color:#334155;background:#f8fafc;font-weight:700;font-size:12px}
+
+    @media (max-width: 900px) {
+      .cols-3, .cols-2 { grid-template-columns: 1fr; }
+      
+      /* Product Section Mobile Improvements */
+      #products .grid {
+        max-width: 100%;
+        padding: 0 15px;
+      }
+      
+      .product-image-container {
+        padding: 15px;
+      }
+      
+      .product-image-container img {
+        max-height: 200px;
+        margin: 0 auto;
+      }
+      
+      .size-options {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .size-option {
+        padding: 10px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .product-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+      }
+      
+      .quantity-controls {
+        margin-top: 10px;
+      }
+      
+      .product-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      
+      .product-header h3 {
+        font-size: 1.3rem;
+      }
+      
+      .price {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* ---------------------- QUALITY ---------------------- */
+    .feature{display:flex;gap:16px;align-items:flex-start;padding:14px;border-radius:16px;border:1px dashed #bae6fd;background:#f0f9ff}
+    .feature svg{min-width:28px}
+
+    /* ---------------------- ORDER ---------------------- */
+    form{display:grid;gap:12px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input,select,textarea{width:100%;padding:12px 14px;border:1px solid #cbd5e1;border-radius:12px;font:inherit}
+    textarea{min-height:110px}
+    .notice{font-size:12px;color:var(--muted)}
+    .inline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+
+    /* ---------------------- FOOTER ---------------------- */
+    footer{background:var(--bg-soft);border-top:1px solid #e2e8f0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    .small{font-size:14px;color:var(--muted)}
+    @media (max-width: 900px){
+      .footer-grid{grid-template-columns:1fr}
+    }
+
+    /* ---------------------- MISC ---------------------- */
+    .badge{background:#10b981;color:#fff;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:800}
+    .float-wa{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:10px;background:#22c55e;color:#fff;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow)}
+    .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111827;color:#fff;padding:12px 16px;border-radius:12px;display:none}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header style="position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.95); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease;">
+    <div class="container">
+      <nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; height: 72px; position: relative;">
+
+        <!-- Brand Logo -->
+        <a href="#home" class="brand" aria-label="sixteen16 home" style="display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; letter-spacing: 0.2px; text-decoration: none; color: #1e293b; transition: all 0.3s ease;">
+          <div class="brand-logo" style="width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, #0ea5e9, #22d3ee); display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.1rem; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3); transition: all 0.3s ease;">16</div>
+          <span class="brand-text" style="background: linear-gradient(135deg, #1e293b, #475569); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">sixteen16</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="nav-links" style="display: flex; align-items: center; gap: 32px;">
+          <a href="#products" class="nav-link" style="font-weight: 600; color: #475569; text-decoration: none; padding: 8px 16px; border-radius: 12px; transition: all 0.3s ease; position: relative;">Products</a>
+          <a href="#quality" class="nav-link" style="font-weight: 600; color: #475569; text-decoration: none; padding: 8px 16px; border-radius: 12px; transition: all 0.3s ease; position: relative;">Quality</a>
+          <a href="#delivery" class="nav-link" style="font-weight: 600; color: #475569; text-decoration: none; padding: 8px 16px; border-radius: 12px; transition: all 0.3s ease; position: relative;">Delivery</a>
+          <a href="#order" class="nav-link" style="font-weight: 600; color: #475569; text-decoration: none; padding: 8px 16px; border-radius: 12px; transition: all 0.3s ease; position: relative;">Order</a>
+          <a href="#contact" class="nav-link" style="font-weight: 600; color: #475569; text-decoration: none; padding: 8px 16px; border-radius: 12px; transition: all 0.3s ease; position: relative;">About</a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="nav-cta" style="display: flex; align-items: center; gap: 12px;">
+          <a href="tel:+923001234567" class="call-btn" style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: white;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span class="call-text">Call</span>
+          </a>
+
+          <a href="#order" class="order-btn" style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M17 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+            </svg>
+            <span class="order-text">Order Now</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" style="display: none; flex-direction: column; justify-content: center; align-items: center; width: 44px; height: 44px; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; transition: all 0.3s ease;">
+          <span class="hamburger-line" style="width: 20px; height: 2px; background: #475569; border-radius: 1px; transition: all 0.3s ease; transform-origin: center;"></span>
+          <span class="hamburger-line" style="width: 20px; height: 2px; background: #475569; border-radius: 1px; transition: all 0.3s ease; margin: 4px 0; transform-origin: center;"></span>
+          <span class="hamburger-line" style="width: 20px; height: 2px; background: #475569; border-radius: 1px; transition: all 0.3s ease; transform-origin: center;"></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+      <div class="container" style="padding: 24px 20px;">
+        <div class="mobile-nav-links" style="display: grid; gap: 4px;">
+          <a href="#products" class="mobile-nav-link" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: rgba(248, 250, 252, 0.8);">
+            <span>Products</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+          <a href="#quality" class="mobile-nav-link" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: rgba(248, 250, 252, 0.8);">
+            <span>Quality</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+          <a href="#delivery" class="mobile-nav-link" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: rgba(248, 250, 252, 0.8);">
+            <span>Delivery</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+          <a href="#order" class="mobile-nav-link" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: rgba(248, 250, 252, 0.8);">
+            <span>Order</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+          <a href="#contact" class="mobile-nav-link" style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: rgba(248, 250, 252, 0.8);">
+            <span>About</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile CTA Buttons -->
+        <div class="mobile-cta" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(226, 232, 240, 0.8);">
+          <a href="tel:+923001234567" class="mobile-call-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 12px; font-weight: 600; color: #475569; text-decoration: none; transition: all 0.3s ease; background: white;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Call
+          </a>
+          <a href="#order" class="mobile-order-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 16px; background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5M17 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+            </svg>
+            Order Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <!-- Desktop Hero -->
+    <div class="container hero-inner">
+      <div>
+        <span class="tag">Pure • Safe • Refreshing</span>
+        <h1>Premium Mineral Water for Pakistan</h1>
+        <p>From everyday hydration to business needs — sixteen16 delivers pristine, great‑tasting water with rigorous quality controls. Available in <strong>Small</strong> and <strong>Large</strong> sizes.</p>
+        <div class="hero-cards">
+          <div class="hero-card">
+            <strong>Same‑day delivery*</strong>
+            <p class="small">In select areas of Karachi, Lahore, Islamabad/Rawalpindi.</p>
+          </div>
+          <div class="hero-card">
+            <strong>Quality Guaranteed</strong>
+            <p class="small">RO + UV + Ozone, mineral balanced, lab‑tested every batch.</p>
+          </div>
+        </div>
+        <div style="margin-top:20px" class="inline">
+          <a href="#order" class="btn btn-primary">Order Now</a>
+          <a href="#quality" class="btn btn-outline">See Quality</a>
+          <span class="badge">Pakistan‑wide</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="bottle" aria-hidden="true"></div>
+        <div class="stamp">H2O • 16:16</div>
+      </div>
+    </div>
+
+    <!-- Mobile Hero -->
+    <div class="mobile-hero container">
+      <img src="assets/images/sixteen16.png" alt="sixteen16 Premium Mineral Water">
+    </div>
+  </section>
+
+  <!-- Products -->
+<section id="products">
+  <div class="container">
+    <div class="section-head products-header">
+      <style>
+        .products-header {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto 50px;
+          padding: 0 20px;
+        }
+        .products-header .tag {
+          background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+          color: #00838f;
+          margin-bottom: 16px;
+          display: inline-block;
+          padding: 8px 20px;
+          border-radius: 24px;
+          font-weight: 600;
+          font-size: 0.9rem;
+          letter-spacing: 0.5px;
+          box-shadow: 0 4px 6px rgba(0, 131, 143, 0.1);
+        }
+        .products-header h2 {
+          font-size: clamp(2rem, 5vw, 3rem);
+          margin: 0 0 20px 0;
+          line-height: 1.2;
+          color: #0f172a;
+          font-weight: 700;
+        }
+        .products-header .divider {
+          width: 100px;
+          height: 5px;
+          background: linear(90deg, var(--primary), #22d3ee);
+          margin: 20px auto;
+          border-radius: 3px;
+        }
+        .products-header .section-sub {
+          font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+          color: #475569;
+          line-height: 1.7;
+          margin: 0 auto;
+          max-width: 600px;
+        }
+        @media (max-width: 768px) {
+          .products-header {
+            margin-bottom: 40px;
+          }
+          .products-header .tag {
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            margin-bottom: 14px;
+          }
+          .products-header h2 {
+            margin-bottom: 16px;
+          }
+          .products-header .divider {
+            width: 80px;
+            height: 4px;
+            margin: 16px auto;
+          }
+        }
+        @media (max-width: 480px) {
+          .products-header {
+            margin-bottom: 30px;
+          }
+          .products-header .tag {
+            font-size: 0.8rem;
+            padding: 5px 14px;
+            margin-bottom: 12px;
+          }
+          .products-header h2 {
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+          }
+          .products-header .divider {
+            width: 60px;
+            height: 3px;
+            margin-top: 14px;
+          }
+          .products-header .section-sub {
+            font-size: 1rem;
+            line-height: 1.6;
+          }
+        }
+      </style>
+      <h2>
+        Premium Mineral Water
+      </h2>
+    </div>
+    
+    <div class="products-grid">
+      <article class="product-card" style="max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+
+        <!-- Product Images Section -->
+        <div class="product-images-section" style="position: relative; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 20px; overflow: hidden;">
+
+          <!-- Image Carousel Container -->
+          <div class="image-carousel-container" style="position: relative; width: 100%; max-width: 500px; margin: 0 auto;">
+
+            <!-- Main Image Display -->
+            <div class="main-image-display" style="position: relative; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.8); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+              <img id="currentProductImage" src="assets/images/500ml - BPI.jpeg" alt="sixteen16 Premium Water" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.4s ease;" />
+
+              <!-- Navigation Arrows -->
+              <button class="image-nav-btn prev-btn" onclick="changeProductImage(-1)" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 2; box-shadow: 0 4px 16px rgba(0,0,0,0.15); backdrop-filter: blur(10px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+              </button>
+
+              <button class="image-nav-btn next-btn" onclick="changeProductImage(1)" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 2; box-shadow: 0 4px 16px rgba(0,0,0,0.15); backdrop-filter: blur(10px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Image Indicators -->
+            <div class="image-indicators" style="display: flex; justify-content: center; gap: 12px; margin-top: 20px;">
+              <button class="indicator-dot active" onclick="goToImage(0)" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #0ea5e9; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);"></button>
+              <button class="indicator-dot" onclick="goToImage(1)" style="width: 14px; height: 14px; border-radius: 50%; border: none; background: #cbd5e1; cursor: pointer; transition: all 0.3s ease;"></button>
+            </div>
+
+            <!-- Product Info Below Image -->
+            <div class="current-product-info" style="text-align: center; margin-top: 24px; padding: 20px; background: rgba(255,255,255,0.7); border-radius: 16px; backdrop-filter: blur(10px);">
+              <h4 id="currentProductTitle" style="margin: 0 0 8px 0; font-size: 1.4rem; color: #1e293b; font-weight: 700;">Small Bottle</h4>
+              <p id="currentProductDesc" style="margin: 0 0 12px 0; color: #64748b; font-size: 1rem;">Perfect for on-the-go hydration</p>
+              <p id="currentProductPrice" style="margin: 0; font-size: 1.2rem; font-weight: 700; color: #0ea5e9;">PKR 60 each</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" style="padding: 20px;">
+          <div class="product-header" style="margin-bottom: 16px;">
+            <h3 style="margin: 0 0 8px 0; font-size: 1.5rem; color: #1e293b;">sixteen16 Premium Water</h3>
+            <p style="margin: 0; color: #64748b; font-size: 1rem;">Pure, refreshing water in two convenient sizes</p>
+          </div>
+
+          <!-- Cart Selection Section -->
+          <div class="cart-selector" style="margin: 30px 0;">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <h3 style="margin: 0 0 8px 0; font-size: 1.4rem; color: #1e293b; font-weight: 700;">Build Your Order</h3>
+              <p style="margin: 0; color: #64748b; font-size: 1rem;">Select quantities for each size</p>
+            </div>
+
+            <div class="cart-items-grid" style="display: grid; gap: 16px;">
+              <!-- Small Bottle Cart Item -->
+              <div class="cart-item small-cart-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border: 2px solid #e2e8f0; border-radius: 16px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); transition: all 0.3s ease; position: relative;">
+                <div class="cart-item-info" style="display: flex; align-items: center; gap: 16px; flex: 1;">
+                  <div class="mini-bottle-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);">500ml</div>
+                  <div>
+                    <h4 style="margin: 0 0 4px 0; font-size: 1.1rem; color: #1e293b; font-weight: 600;">Small Bottle</h4>
+                    <p style="margin: 0; color: #64748b; font-size: 0.9rem;">PKR 60 each • Perfect for personal use</p>
+                  </div>
+                </div>
+                <div class="quantity-controls" style="display: flex; align-items: center; gap: 12px; background: white; padding: 8px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <button type="button" class="qty-btn" onclick="updateCartQuantity('small', -1)" style="width: 36px; height: 36px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; font-size: 1.2rem; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; font-weight: 600;">−</button>
+                  <span class="qty-display" id="smallQty" style="min-width: 40px; text-align: center; font-weight: 700; font-size: 1.1rem; color: #0ea5e9;">0</span>
+                  <button type="button" class="qty-btn" onclick="updateCartQuantity('small', 1)" style="width: 36px; height: 36px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; font-size: 1.2rem; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; font-weight: 600;">+</button>
+                </div>
+              </div>
+
+              <!-- Large Bottle Cart Item -->
+              <div class="cart-item large-cart-item" style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border: 2px solid #e2e8f0; border-radius: 16px; background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); transition: all 0.3s ease; position: relative;">
+                <div class="cart-item-info" style="display: flex; align-items: center; gap: 16px; flex: 1;">
+                  <div class="mini-bottle-icon" style="width: 48px; height: 48px; background: linear-gradient(135deg, #059669, #047857); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.85rem; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);">1.5L</div>
+                  <div>
+                    <h4 style="margin: 0 0 4px 0; font-size: 1.1rem; color: #1e293b; font-weight: 600;">Large Bottle</h4>
+                    <p style="margin: 0; color: #64748b; font-size: 0.9rem;">PKR 350 each • Great for families & offices</p>
+                  </div>
+                </div>
+                <div class="quantity-controls" style="display: flex; align-items: center; gap: 12px; background: white; padding: 8px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                  <button type="button" class="qty-btn" onclick="updateCartQuantity('large', -1)" style="width: 36px; height: 36px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; font-size: 1.2rem; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; font-weight: 600;">−</button>
+                  <span class="qty-display" id="largeQty" style="min-width: 40px; text-align: center; font-weight: 700; font-size: 1.1rem; color: #059669;">0</span>
+                  <button type="button" class="qty-btn" onclick="updateCartQuantity('large', 1)" style="width: 36px; height: 36px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; font-size: 1.2rem; color: #334155; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; font-weight: 600;">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+          <!-- Order Summary & Actions -->
+          <div class="order-summary-section" style="margin-top: 30px; padding: 24px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 20px; border: 1px solid #e2e8f0;">
+            <div class="total-display" style="text-align: center; margin-bottom: 20px;">
+              <p style="margin: 0 0 8px 0; color: #64748b; font-size: 0.95rem; font-weight: 500;">Order Total</p>
+              <div style="font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 4px;">
+                PKR <span id="cartTotal" style="color: #0ea5e9; transition: all 0.2s ease; display: inline-block;">0</span>
+              </div>
+              <p style="margin: 0; color: #64748b; font-size: 0.9rem;">Premium quality water for your health</p>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="orderNowBtn" onclick="proceedToOrder()" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 24px; font-size: 1.1rem; font-weight: 700; border-radius: 16px; background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; opacity: 0.5; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg>
+              <span id="orderBtnText">Add items to cart</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+            </button>
+          </div>
+          
+          <script>
+            // Cart system for multiple bottle sizes (global access)
+            window.cart = {
+              small: 0,
+              large: 0
+            };
+
+            const prices = {
+              small: 60,
+              large: 350
+            };
+
+            // Update cart quantity for a specific size
+            function updateCartQuantity(size, change) {
+              window.cart[size] = Math.max(0, window.cart[size] + change);
+              updateCartDisplay();
+            }
+
+            // Update all cart displays (global access)
+            window.updateCartDisplay = function updateCartDisplay() {
+              // Update quantity displays
+              const smallQtyElement = document.getElementById('smallQty');
+              const largeQtyElement = document.getElementById('largeQty');
+
+              if (smallQtyElement) smallQtyElement.textContent = window.cart.small;
+              if (largeQtyElement) largeQtyElement.textContent = window.cart.large;
+
+              // Calculate total
+              const total = (window.cart.small * prices.small) + (window.cart.large * prices.large);
+
+              // Update cart total display with animation
+              const cartTotalElement = document.getElementById('cartTotal');
+              if (cartTotalElement) {
+                const oldValue = cartTotalElement.textContent;
+                const newValue = total.toLocaleString();
+
+                if (oldValue !== newValue) {
+                  // Add highlight effect for price changes
+                  cartTotalElement.style.transform = 'scale(1.1)';
+                  cartTotalElement.style.color = '#059669';
+
+                  setTimeout(() => {
+                    cartTotalElement.style.transform = 'scale(1)';
+                    cartTotalElement.style.color = '#0ea5e9';
+                  }, 200);
+                }
+
+                cartTotalElement.textContent = newValue;
+              }
+
+              // Update order button
+              const orderBtn = document.getElementById('orderNowBtn');
+              const orderBtnText = document.getElementById('orderBtnText');
+              const totalItems = window.cart.small + window.cart.large;
+
+              if (totalItems > 0) {
+                orderBtn.disabled = false;
+                orderBtn.style.opacity = '1';
+                orderBtn.style.cursor = 'pointer';
+                orderBtnText.textContent = `Order Now (${totalItems} item${totalItems > 1 ? 's' : ''})`;
+              } else {
+                orderBtn.disabled = true;
+                orderBtn.style.opacity = '0.5';
+                orderBtn.style.cursor = 'not-allowed';
+                orderBtnText.textContent = 'Add items to cart';
+              }
+
+
+
+              // Add visual feedback to cart items
+              const smallCartItem = document.querySelector('.small-cart-item');
+              const largeCartItem = document.querySelector('.large-cart-item');
+
+              if (smallCartItem) {
+                if (window.cart.small > 0) {
+                  smallCartItem.style.borderColor = '#0ea5e9';
+                  smallCartItem.style.background = 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)';
+                } else {
+                  smallCartItem.style.borderColor = '#e2e8f0';
+                  smallCartItem.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
+                }
+              }
+
+              if (largeCartItem) {
+                if (window.cart.large > 0) {
+                  largeCartItem.style.borderColor = '#059669';
+                  largeCartItem.style.background = 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)';
+                } else {
+                  largeCartItem.style.borderColor = '#e2e8f0';
+                  largeCartItem.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
+                }
+              }
+
+              // Update order form if available
+              if (typeof updateOrderForm === 'function') {
+                updateOrderForm();
+              }
+            }
+
+            // Proceed to order with current cart (global function)
+            window.proceedToOrder = function() {
+              if (window.cart.small === 0 && window.cart.large === 0) {
+                alert('Please add items to your cart first!');
+                return;
+              }
+
+              // Build order URL with cart contents
+              const params = new URLSearchParams();
+              if (window.cart.small > 0) {
+                params.append('small_qty', window.cart.small);
+              }
+              if (window.cart.large > 0) {
+                params.append('large_qty', window.cart.large);
+              }
+
+              // Navigate to order.html page with cart data
+              window.location.href = `order.html?${params.toString()}`;
+            }
+
+            // Initialize cart display
+            updateCartDisplay();
+
+            // Ensure cart display is updated when DOM is ready
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', updateCartDisplay);
+            }
+
+            // Keyboard navigation for image carousel
+            document.addEventListener('keydown', function(e) {
+              if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                changeProductImage(-1);
+              } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                changeProductImage(1);
+              }
+            });
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            const imageContainer = document.querySelector('.main-image-display');
+            if (imageContainer) {
+              imageContainer.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+              });
+
+              imageContainer.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+              });
+            }
+
+            function handleSwipe() {
+              const swipeThreshold = 50;
+              const diff = touchStartX - touchEndX;
+
+              if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                  changeProductImage(1); // Swipe left, go to next
+                } else {
+                  changeProductImage(-1); // Swipe right, go to previous
+                }
+              }
+            }
+
+            // Make functions globally accessible for onclick handlers
+            window.updateCartQuantity = updateCartQuantity;
+
+            // Product image carousel system
+            const productImages = [
+              {
+                src: 'assets/images/500ml - BPI.jpeg',
+                alt: 'sixteen16 Small Bottle 500ml',
+                title: 'Small Bottle',
+                description: 'Perfect for on-the-go hydration',
+                price: 'PKR 60 each',
+                badge: '500ml',
+                badgeColor: '#0ea5e9',
+                size: 'small'
+              },
+              {
+                src: 'assets/images/1-5-liter-BPI.jpeg',
+                alt: 'sixteen16 Large Bottle 1.5L',
+                title: 'Large Bottle',
+                description: 'Great for families & offices',
+                price: 'PKR 350 each',
+                badge: '1.5L',
+                badgeColor: '#059669',
+                size: 'large'
+              }
+            ];
+
+            let currentImageIndex = 0;
+
+            window.changeProductImage = function(direction) {
+              currentImageIndex = (currentImageIndex + direction + productImages.length) % productImages.length;
+              updateProductDisplay();
+            };
+
+            window.goToImage = function(index) {
+              currentImageIndex = index;
+              updateProductDisplay();
+            };
+
+            function updateProductDisplay() {
+              const currentImage = productImages[currentImageIndex];
+
+              // Update main image
+              const imageElement = document.getElementById('currentProductImage');
+              const titleElement = document.getElementById('currentProductTitle');
+              const descElement = document.getElementById('currentProductDesc');
+              const priceElement = document.getElementById('currentProductPrice');
+
+              if (imageElement) {
+                imageElement.src = currentImage.src;
+                imageElement.alt = currentImage.alt;
+              }
+
+              if (titleElement) titleElement.textContent = currentImage.title;
+              if (descElement) descElement.textContent = currentImage.description;
+              if (priceElement) priceElement.textContent = currentImage.price;
+
+              // Update indicators
+              const indicators = document.querySelectorAll('.indicator-dot');
+              indicators.forEach((indicator, index) => {
+                if (index === currentImageIndex) {
+                  indicator.style.background = currentImage.badgeColor;
+                  indicator.style.boxShadow = `0 2px 8px ${currentImage.badgeColor}40`;
+                  indicator.style.transform = 'scale(1.2)';
+                  indicator.classList.add('active');
+                } else {
+                  indicator.style.background = '#cbd5e1';
+                  indicator.style.boxShadow = 'none';
+                  indicator.style.transform = 'scale(1)';
+                  indicator.classList.remove('active');
+                }
+              });
+            }
+
+            // Bottle highlighting function
+            window.highlightBottle = function(size) {
+              const smallBottle = document.querySelector('.small-bottle');
+              const largeBottle = document.querySelector('.large-bottle');
+
+              // Reset all bottles
+              [smallBottle, largeBottle].forEach(bottle => {
+                if (bottle) {
+                  bottle.style.transform = 'scale(1)';
+                  bottle.style.opacity = '0.7';
+                }
+              });
+
+              // Highlight selected bottle
+              const selectedBottle = size === 'small' ? smallBottle : largeBottle;
+              if (selectedBottle) {
+                selectedBottle.style.transform = 'scale(1.05)';
+                selectedBottle.style.opacity = '1';
+              }
+
+              // Auto-add one item to cart
+              updateCartQuantity(size, 1);
+            };
+          </script>
+        </div>
+      </article>
+    </div>
+    
+    <div class="product-benefits">
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h4>Pure & Natural</h4>
+        <p>Sourced from pristine natural springs with essential minerals</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M7.5 4.27l9 5.15"/>
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8z"/>
+            <path d="M3.27 6.96L12 12.01l8.73-5.05"/>
+            <path d="M12 22.08V12"/>
+          </svg>
+        </div>
+        <h4>pH Balanced</h4>
+        <p>Perfectly balanced pH levels for optimal hydration and taste</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+            <path d="M3 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+            <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+            <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </div>
+        <h4>BPA-Free</h4>
+        <p>Safe, eco-friendly packaging free from harmful chemicals</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <h4>Energy Boost</h4>
+        <p>Essential electrolytes to keep you hydrated and energized</p>
+      </div>
+    </div>
+    
+    <p class="disclaimer">Prices are indicative and can be customized by city and volume. Deposit may apply for reusable cans.</p>
+  </div>
+</section>
+
+<style>
+  /* Product Section Styles */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .product-image-container {
+    position: relative;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+    text-align: center;
+    padding: 30px 20px;
+    margin: 0;
+  }
+  
+  .product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 2;
+  }
+  
+  .product-image-container {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .product-image-container img {
+    max-height: 240px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    object-fit: contain;
+  }
+  
+  .product-card:hover .product-image-container img {
+    transform: scale(1.05);
+  }
+  
+  .size-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  .card-body {
+    padding: 25px;
+  }
+  
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+  }
+  
+  .price .small {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  
+  .size-selector {
+    margin: 25px 0;
+  }
+  
+  .size-selector label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1.05rem;
+  }
+  
+  .size-options {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0;
+  }
+  
+  .size-option {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  
+  .size-option:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  .size-option.active {
+    border-color: var(--primary);
+    background: #f0f9ff;
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.1);
+  }
+  
+  .size-option .size {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .size-option .volume {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  
+  .product-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .product-features li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    color: #475569;
+  }
+  
+  .product-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+  }
+  
+  .product-description {
+    color: var(--muted);
+    margin: 20px 0;
+    line-height: 1.6;
+    font-size: 1.05rem;
+  }
+  
+  .quantity-selector {
+    margin: 25px 0;
+  }
+  
+  .quantity-selector label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1.05rem;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quantity-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quantity-btn:hover {
+    background: #f1f5f9;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .quantity-input {
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .quantity-input::-webkit-inner-spin-button,
+  .quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .quantity-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  }
+
+  /* Enhanced Cart System Styles */
+  .cart-selector {
+    margin: 30px 0;
+  }
+
+  .cart-item {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cart-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .cart-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .cart-item:hover::before {
+    left: 100%;
+  }
+
+  .large-cart-item:hover {
+    border-color: #059669;
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+  }
+
+  .qty-btn {
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .qty-btn:hover {
+    background: #f8fafc;
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+  }
+
+  .qty-btn:active {
+    transform: scale(0.95);
+  }
+
+  .qty-display {
+    transition: all 0.3s ease;
+  }
+
+  /* Bottle Display Enhancements */
+  .bottle-display {
+    transition: all 0.3s ease;
+  }
+
+  .bottle-display:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .bottle-display:hover img {
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.2));
+  }
+
+  .bottle-display:hover .bottle-badge {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Order Button Enhancements */
+  #orderNowBtn:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  }
+
+  #orderNowBtn:not(:disabled):active {
+    transform: translateY(0);
+  }
+
+  /* Enhanced Image Navigation Styles */
+  .image-nav-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .image-nav-btn:hover {
+    background: rgba(255,255,255,1) !important;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25) !important;
+  }
+
+  .image-nav-btn:hover svg {
+    stroke: #0ea5e9;
+    transform: scale(1.1);
+  }
+
+  .image-nav-btn:active {
+    transform: translateY(-50%) scale(0.9);
+  }
+
+  .indicator-dot {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .indicator-dot:hover {
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .indicator-dot.active {
+    transform: scale(1.2);
+  }
+
+  /* Main Image Display */
+  .main-image-display {
+    transition: all 0.3s ease;
+  }
+
+  .main-image-display:hover .image-nav-btn {
+    opacity: 1;
+  }
+
+  /* Enhanced Responsive Design */
+  @media (max-width: 1024px) {
+    .product-card {
+      max-width: 700px !important;
+    }
+
+    .image-carousel-container {
+      max-width: 450px !important;
+    }
+
+    .main-image-display {
+      height: 350px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .product-card {
+      max-width: 100% !important;
+      margin: 0 16px !important;
+      border-radius: 16px !important;
+    }
+
+    .product-images-section {
+      padding: 16px !important;
+    }
+
+    .image-carousel-container {
+      max-width: 100% !important;
+    }
+
+    .main-image-display {
+      height: 300px !important;
+    }
+
+    .image-nav-btn {
+      width: 44px !important;
+      height: 44px !important;
+      left: 12px !important;
+    }
+
+    .next-btn {
+      right: 12px !important;
+    }
+
+    .current-product-info {
+      padding: 16px !important;
+      margin-top: 16px !important;
+    }
+
+    .cart-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+      padding: 16px !important;
+    }
+
+    .cart-item-info {
+      justify-content: center;
+      gap: 12px !important;
+    }
+
+    .mini-bottle-icon {
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    .quantity-controls {
+      gap: 8px !important;
+    }
+
+    .qty-btn {
+      width: 32px !important;
+      height: 32px !important;
+    }
+
+    .order-summary-section {
+      padding: 20px !important;
+      margin-top: 20px !important;
+    }
+
+    .total-display div {
+      font-size: 2rem !important;
+    }
+
+    #orderNowBtn {
+      padding: 16px 20px !important;
+      font-size: 1rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-card {
+      margin: 0 8px !important;
+      border-radius: 12px !important;
+    }
+
+    .product-images-section {
+      padding: 12px !important;
+    }
+
+    .image-carousel-container {
+      max-width: 100% !important;
+    }
+
+    .main-image-display {
+      height: 250px !important;
+    }
+
+    .image-nav-btn {
+      width: 40px !important;
+      height: 40px !important;
+      left: 8px !important;
+    }
+
+    .next-btn {
+      right: 8px !important;
+    }
+
+    .current-product-info {
+      padding: 12px !important;
+      margin-top: 12px !important;
+    }
+
+    .current-product-info h4 {
+      font-size: 1.1rem !important;
+    }
+
+    .current-product-info p {
+      font-size: 0.9rem !important;
+    }
+
+    .cart-items-grid {
+      gap: 12px !important;
+    }
+
+    .cart-item {
+      padding: 12px !important;
+    }
+
+    .cart-item h4 {
+      font-size: 1rem !important;
+    }
+
+    .cart-item p {
+      font-size: 0.8rem !important;
+    }
+
+    .mini-bottle-icon {
+      width: 36px !important;
+      height: 36px !important;
+      font-size: 0.8rem !important;
+    }
+
+    .total-display div {
+      font-size: 1.8rem !important;
+    }
+
+    .total-display p {
+      font-size: 0.85rem !important;
+    }
+
+    #orderNowBtn {
+      padding: 14px 16px !important;
+      font-size: 0.95rem !important;
+    }
+  }
+
+  /* Landscape Mobile Optimization */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .product-images-section {
+      padding: 12px 16px !important;
+    }
+
+    .main-image-display {
+      height: 200px !important;
+    }
+
+    .current-product-info {
+      margin-top: 8px !important;
+      padding: 12px !important;
+    }
+
+    .cart-selector {
+      margin: 16px 0 !important;
+    }
+
+    .order-summary-section {
+      margin-top: 12px !important;
+    }
+  }
+  
+  .product-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+  }
+  
+  .product-actions .btn {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .btn-secondary {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  
+  .btn-secondary:hover {
+    background: #f0f9ff;
+  }
+  
+  .product-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin: 80px 0 60px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+  }
+
+  .product-benefits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(5, 150, 105, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .benefit-item {
+    text-align: center;
+    padding: 40px 24px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .benefit-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(5, 150, 105, 0.05) 100%);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .benefit-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  }
+
+  .benefit-item:hover::before {
+    opacity: 1;
+  }
+
+  .benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #059669 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: white;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+    transition: all 0.4s ease;
+  }
+
+  .benefit-icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #0ea5e9, #059669);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .benefit-item:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 32px rgba(14, 165, 233, 0.4);
+  }
+
+  .benefit-item:hover .benefit-icon::before {
+    opacity: 1;
+  }
+
+  .benefit-item h4 {
+    margin: 0 0 12px 0;
+    font-size: 1.3rem;
+    color: #1e293b;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+
+  .benefit-item:hover h4 {
+    color: #0ea5e9;
+  }
+
+  .benefit-item p {
+    margin: 0;
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+
+  .benefit-item:hover p {
+    color: #475569;
+  }
+  
+  .disclaimer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+    
+    .product-actions {
+      flex-direction: column;
+    }
+    
+    .product-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .price {
+      align-self: flex-start;
+    }
+    
+    .size-options {
+      flex-direction: column;
+    }
+
+    .product-benefits {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin: 40px 0 30px;
+      padding: 30px 16px;
+      border-radius: 16px;
+    }
+
+    .benefit-item {
+      padding: 30px 20px;
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.2rem;
+    }
+
+    .benefit-item p {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-benefits {
+      margin: 30px 0 20px;
+      padding: 20px 12px;
+      gap: 16px;
+    }
+
+    .benefit-item {
+      padding: 24px 16px;
+    }
+
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 16px;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .benefit-item p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Quality Section Enhancements */
+  .process-step:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+  }
+
+  .process-step:hover .process-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .metric-item {
+    transition: all 0.4s ease;
+  }
+
+  .metric-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  /* Quality Section Responsive */
+  @media (max-width: 768px) {
+    .quality-process {
+      margin-bottom: 60px !important;
+    }
+
+    .process-step {
+      padding: 30px 16px !important;
+    }
+
+    .process-icon {
+      width: 60px !important;
+      height: 60px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .process-icon svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
+
+    .process-step h3 {
+      font-size: 1.2rem !important;
+    }
+
+    .process-step p {
+      font-size: 0.9rem !important;
+    }
+
+    .quality-metrics {
+      padding: 40px 20px !important;
+    }
+
+    .quality-metrics h3 {
+      font-size: 1.8rem !important;
+    }
+
+    .metric-item {
+      padding: 20px 16px !important;
+    }
+
+    .metric-item div:first-child {
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #quality h2 {
+      font-size: 2.2rem !important;
+    }
+
+    .section-sub {
+      font-size: 1rem !important;
+    }
+
+    .quality-process div {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .quality-metrics div:last-child {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px !important;
+    }
+
+    .metric-item div:first-child {
+      font-size: 1.8rem !important;
+    }
+
+    .metric-item div:nth-child(2) {
+      font-size: 1rem !important;
+    }
+  }
+
+  /* Delivery Section Enhancements */
+  .stat-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+  }
+
+  .stat-item:hover .stat-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+  }
+
+  .city-tag:hover, .payment-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Delivery Section Responsive */
+  @media (max-width: 1024px) {
+    .delivery-stats {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 24px !important;
+    }
+
+    .service-areas {
+      gap: 30px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #delivery h2 {
+      font-size: 2.2rem !important;
+    }
+
+    .delivery-stats {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      margin-bottom: 60px !important;
+    }
+
+    .stat-item {
+      padding: 30px 16px !important;
+    }
+
+    .stat-icon {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    .stat-icon svg {
+      width: 28px !important;
+      height: 28px !important;
+    }
+
+    .stat-item div:nth-child(3) {
+      font-size: 2rem !important;
+    }
+
+    .service-areas {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .service-card {
+      padding: 30px 20px !important;
+    }
+
+    .service-icon {
+      width: 50px !important;
+      height: 50px !important;
+    }
+
+    .service-icon svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem !important;
+    }
+
+    .city-list, .payment-methods {
+      gap: 6px !important;
+    }
+
+    .city-tag, .payment-tag {
+      font-size: 0.8rem !important;
+      padding: 6px 10px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #delivery .section-sub {
+      font-size: 1rem !important;
+    }
+
+    .delivery-stats {
+      margin-bottom: 40px !important;
+    }
+
+    .stat-item {
+      padding: 24px 12px !important;
+    }
+
+    .stat-item div:nth-child(3) {
+      font-size: 1.8rem !important;
+    }
+
+    .stat-item div:nth-child(4) {
+      font-size: 1rem !important;
+    }
+
+    .stat-item div:nth-child(5) {
+      font-size: 0.85rem !important;
+    }
+
+    .service-card {
+      padding: 24px 16px !important;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem !important;
+    }
+
+    .service-card p {
+      font-size: 0.9rem !important;
+    }
+
+    .schedule {
+      padding: 16px !important;
+    }
+
+    .city-list {
+      margin-bottom: 20px !important;
+    }
+
+    .service-card ul li {
+      font-size: 0.9rem !important;
+      margin-bottom: 10px !important;
+    }
+  }
+
+  /* Order Form Enhancements */
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .form-group input:hover,
+  .form-group select:hover,
+  .form-group textarea:hover {
+    border-color: #cbd5e1;
+  }
+
+  .contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .submit-section button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  }
+
+  .submit-section button:active {
+    transform: translateY(0);
+  }
+
+  /* Order Form Responsive */
+  @media (max-width: 1024px) {
+    .order-container {
+      grid-template-columns: 1fr !important;
+      gap: 30px !important;
+    }
+
+    .order-form-card,
+    .contact-support-card {
+      padding: 30px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #order h2 {
+      font-size: 2.2rem !important;
+    }
+
+    .order-form-card,
+    .contact-support-card {
+      padding: 24px !important;
+      border-radius: 16px !important;
+    }
+
+    .form-section div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 14px !important;
+      font-size: 0.95rem !important;
+    }
+
+    .submit-section button {
+      padding: 16px 20px !important;
+      font-size: 1rem !important;
+    }
+
+    .contact-item {
+      padding: 12px !important;
+    }
+
+    .contact-item div:first-child {
+      width: 40px !important;
+      height: 40px !important;
+    }
+
+    .contact-item div:first-child svg {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #order .section-sub {
+      font-size: 1rem !important;
+    }
+
+    .order-form-card,
+    .contact-support-card {
+      padding: 20px !important;
+    }
+
+    .form-section h4 {
+      font-size: 1rem !important;
+    }
+
+    .form-group label {
+      font-size: 0.9rem !important;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px 12px !important;
+      font-size: 0.9rem !important;
+    }
+
+    .order-summary-section {
+      padding: 16px !important;
+    }
+
+    .submit-section button {
+      padding: 14px 16px !important;
+      font-size: 0.95rem !important;
+    }
+
+    .contact-item {
+      flex-direction: column !important;
+      text-align: center !important;
+      gap: 12px !important;
+    }
+
+    .business-hours {
+      padding: 16px !important;
+    }
+  }
+
+  /* About Section Enhancements */
+  .about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .footer-section a:hover {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.1);
+    transform: translateX(4px);
+  }
+
+  .company-stats .stat-item {
+    transition: all 0.4s ease;
+  }
+
+  .company-stats .stat-item:hover {
+    transform: translateY(-4px);
+  }
+
+  /* About Section Responsive */
+  @media (max-width: 1024px) {
+    .about-content {
+      gap: 30px !important;
+      margin-bottom: 60px !important;
+    }
+
+    .company-stats {
+      padding: 40px 20px !important;
+      margin-bottom: 60px !important;
+    }
+
+    .footer-links {
+      gap: 30px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #contact h2 {
+      font-size: 2.2rem !important;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+      margin-bottom: 50px !important;
+    }
+
+    .about-card {
+      padding: 30px 20px !important;
+    }
+
+    .about-card div:first-child {
+      width: 50px !important;
+      height: 50px !important;
+    }
+
+    .about-card div:first-child svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .about-card h3 {
+      font-size: 1.3rem !important;
+    }
+
+    .company-stats {
+      grid-template-columns: repeat(2, 1fr) !important;
+      padding: 30px 16px !important;
+      gap: 24px !important;
+    }
+
+    .company-stats .stat-item div:first-child {
+      font-size: 2rem !important;
+    }
+
+    .footer-links {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .footer-section h3 {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #contact .section-sub {
+      font-size: 1rem !important;
+    }
+
+    .about-card {
+      padding: 24px 16px !important;
+    }
+
+    .about-card h3 {
+      font-size: 1.2rem !important;
+    }
+
+    .about-card p {
+      font-size: 0.9rem !important;
+    }
+
+    .company-stats {
+      grid-template-columns: 1fr !important;
+      padding: 24px 12px !important;
+      gap: 20px !important;
+    }
+
+    .company-stats .stat-item div:first-child {
+      font-size: 1.8rem !important;
+    }
+
+    .company-stats .stat-item div:nth-child(2) {
+      font-size: 1rem !important;
+    }
+
+    .footer-section {
+      text-align: center !important;
+    }
+
+    .footer-section ul {
+      justify-items: center !important;
+    }
+
+    .footer-section a {
+      justify-content: center !important;
+    }
+  }
+
+  /* Footer Copyright Enhancements */
+  .copyright-section {
+    transition: all 0.3s ease;
+  }
+
+  .made-in-section {
+    transition: all 0.3s ease;
+  }
+
+  .made-in-section:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  /* Footer Responsive */
+  @media (max-width: 768px) {
+    footer .container {
+      flex-direction: column !important;
+      gap: 16px !important;
+      padding: 24px 0 !important;
+      text-align: center !important;
+    }
+
+    .copyright-section {
+      flex-direction: column !important;
+      gap: 12px !important;
+      text-align: center !important;
+    }
+
+    .copyright-section div:first-child {
+      justify-content: center !important;
+    }
+
+    .made-in-section {
+      padding: 10px 16px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .copyright-section div:first-child {
+      gap: 8px !important;
+    }
+
+    .copyright-section div:first-child div:first-child {
+      width: 32px !important;
+      height: 32px !important;
+      font-size: 0.9rem !important;
+    }
+
+    .copyright-section div:first-child div:last-child {
+      font-size: 1rem !important;
+    }
+
+    .copyright-section div:last-child {
+      font-size: 0.85rem !important;
+    }
+
+    .made-in-section {
+      padding: 8px 12px !important;
+    }
+
+    .made-in-section div:first-child {
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    .made-in-section div:first-child svg {
+      width: 10px !important;
+      height: 10px !important;
+    }
+
+    .made-in-section div:last-child {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  /* Floating WhatsApp Button Enhancements */
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-8px);
+    }
+    60% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    25% {
+      opacity: 0.7;
+      transform: scale(0.98);
+    }
+    75% {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.7), 0 0 20px rgba(37, 211, 102, 0.3);
+    }
+  }
+
+  .whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+    background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+  }
+
+  .whatsapp-btn:hover .whatsapp-icon {
+    animation: bounce 1s ease-in-out;
+  }
+
+  .whatsapp-btn:hover div:first-child {
+    transform: translateX(100%);
+  }
+
+  .whatsapp-btn:active {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .floating-whatsapp:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* WhatsApp Button Responsive */
+  @media (max-width: 768px) {
+    .floating-whatsapp {
+      bottom: 20px !important;
+      right: 20px !important;
+    }
+
+    .whatsapp-btn {
+      padding: 14px 18px !important;
+      font-size: 0.95rem !important;
+      gap: 10px !important;
+    }
+
+    .whatsapp-icon {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .whatsapp-icon svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .whatsapp-tooltip {
+      font-size: 0.8rem !important;
+      padding: 6px 10px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .floating-whatsapp {
+      bottom: 16px !important;
+      right: 16px !important;
+    }
+
+    .whatsapp-btn {
+      padding: 12px 16px !important;
+      font-size: 0.85rem !important;
+      border-radius: 40px !important;
+      gap: 8px !important;
+    }
+
+    .whatsapp-icon {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .whatsapp-icon svg {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .whatsapp-tooltip {
+      right: -8px !important;
+      font-size: 0.75rem !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .whatsapp-text {
+      display: none !important;
+    }
+
+    .whatsapp-btn {
+      width: 56px !important;
+      height: 56px !important;
+      border-radius: 50% !important;
+      justify-content: center !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+
+    .whatsapp-icon {
+      width: 28px !important;
+      height: 28px !important;
+    }
+
+    .whatsapp-icon svg {
+      width: 28px !important;
+      height: 28px !important;
+    }
+
+    .pulse-ring {
+      border-radius: 50% !important;
+    }
+  }
+</style>
+
+  <!-- Quality & Purification -->
+  <section id="quality" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); position: relative; overflow: hidden;">
+    <!-- Background Pattern -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(5, 150, 105, 0.05) 0%, transparent 50%); pointer-events: none;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-head" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="margin: 0 0 20px 0; font-size: 3rem; font-weight: 800; color: #1e293b; line-height: 1.2;">Quality & Purification</h2>
+      </div>
+
+      <!-- Quality Process Flow -->
+      <div class="quality-process" style="margin-bottom: 80px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+
+          <!-- Step 1: Source -->
+          <div class="process-step" style="text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.8); border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.4s ease; position: relative;">
+            <div class="step-number" style="position: absolute; top: -15px; left: 20px; background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);">1</div>
+            <div class="process-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 700; color: #1e293b;">Natural Source</h3>
+            <p style="margin: 0; color: #64748b; font-size: 1rem; line-height: 1.5;">Premium water sourced from protected natural springs with optimal mineral content</p>
+          </div>
+
+          <!-- Step 2: Purification -->
+          <div class="process-step" style="text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.8); border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.4s ease; position: relative;">
+            <div class="step-number" style="position: absolute; top: -15px; left: 20px; background: linear-gradient(135deg, #059669, #047857); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);">2</div>
+            <div class="process-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #059669, #047857); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M7.5 4.27l9 5.15"/>
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8z"/>
+                <path d="M3.27 6.96L12 12.01l8.73-5.05"/>
+                <path d="M12 22.08V12"/>
+              </svg>
+            </div>
+            <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 700; color: #1e293b;">RO + UV + Ozone</h3>
+            <p style="margin: 0; color: #64748b; font-size: 1rem; line-height: 1.5;">Advanced multi-stage filtration removes impurities while UV and ozone ensure complete safety</p>
+          </div>
+
+          <!-- Step 3: Testing -->
+          <div class="process-step" style="text-align: center; padding: 40px 20px; background: rgba(255, 255, 255, 0.8); border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.4s ease; position: relative;">
+            <div class="step-number" style="position: absolute; top: -15px; left: 20px; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);">3</div>
+            <div class="process-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M9 12l2 2 4-4"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+            </div>
+            <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 700; color: #1e293b;">Lab Testing</h3>
+            <p style="margin: 0; color: #64748b; font-size: 1rem; line-height: 1.5;">Every batch tested for pH, TDS, turbidity, and microbial parameters with certified reports</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quality Metrics -->
+      <div class="quality-metrics" style="background: rgba(255, 255, 255, 0.9); border-radius: 24px; padding: 60px 40px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.1);">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <h3 style="margin: 0 0 16px 0; font-size: 2.2rem; font-weight: 700; color: #1e293b;">Quality Standards</h3>
+          <p style="margin: 0; color: #64748b; font-size: 1.1rem;">Certified parameters that ensure every drop meets international quality benchmarks</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+          <div class="metric-item" style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(14, 165, 233, 0.1)); border-radius: 16px; border: 1px solid rgba(14, 165, 233, 0.2);">
+            <div style="font-size: 2.5rem; font-weight: 800; color: #0ea5e9; margin-bottom: 8px;">7.2</div>
+            <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">pH Level</div>
+            <div style="font-size: 0.9rem; color: #64748b;">Perfectly Balanced</div>
+          </div>
+
+          <div class="metric-item" style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(5, 150, 105, 0.1)); border-radius: 16px; border: 1px solid rgba(5, 150, 105, 0.2);">
+            <div style="font-size: 2.5rem; font-weight: 800; color: #059669; margin-bottom: 8px;">120</div>
+            <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">TDS (ppm)</div>
+            <div style="font-size: 0.9rem; color: #64748b;">Optimal Minerals</div>
+          </div>
+
+          <div class="metric-item" style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.1)); border-radius: 16px; border: 1px solid rgba(124, 58, 237, 0.2);">
+            <div style="font-size: 2.5rem; font-weight: 800; color: #7c3aed; margin-bottom: 8px;">0</div>
+            <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">Bacteria</div>
+            <div style="font-size: 0.9rem; color: #64748b;">100% Pure</div>
+          </div>
+
+          <div class="metric-item" style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1)); border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.2);">
+            <div style="font-size: 2.5rem; font-weight: 800; color: #ef4444; margin-bottom: 8px;">0</div>
+            <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">Chemicals</div>
+            <div style="font-size: 0.9rem; color: #64748b;">BPA-Free Safe</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Coverage -->
+  <section id="delivery" style="background: #ffffff; position: relative; overflow: hidden;">
+    <!-- Background Elements -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(14, 165, 233, 0.02) 0%, rgba(5, 150, 105, 0.02) 100%); pointer-events: none;"></div>
+    <div style="position: absolute; top: 20%; right: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: 20%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <!-- Section Header -->
+      <div class="section-head" style="text-align: center; margin-bottom: 80px;">
+        <h2 style="margin: 0 0 24px 0; font-size: 3rem; font-weight: 800; color: #1e293b; line-height: 1.2;">Delivery Coverage</h2>
+      </div>
+
+      <!-- Delivery Stats -->
+      <div class="delivery-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 80px;">
+        <div class="stat-item" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(5, 150, 105, 0.1)); border-radius: 20px; border: 1px solid rgba(5, 150, 105, 0.2); transition: all 0.4s ease;">
+          <div class="stat-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #059669, #047857); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #059669; margin-bottom: 8px;">24h</div>
+          <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">Same Day</div>
+          <div style="font-size: 0.9rem; color: #64748b;">Major Cities</div>
+        </div>
+
+        <div class="stat-item" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.1)); border-radius: 20px; border: 1px solid rgba(124, 58, 237, 0.2); transition: all 0.4s ease;">
+          <div class="stat-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"/>
+              <path d="m16 8 2 2-2 2"/>
+              <path d="m21 12H18"/>
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>
+            </svg>
+          </div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #7c3aed; margin-bottom: 8px;">Free</div>
+          <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">Delivery</div>
+          <div style="font-size: 0.9rem; color: #64748b;">Orders Above PKR 1000</div>
+        </div>
+
+        <div class="stat-item" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1)); border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.2); transition: all 0.4s ease;">
+          <div class="stat-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.3);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <path d="M3 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <circle cx="12" cy="12" r="9"/>
+            </svg>
+          </div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #ef4444; margin-bottom: 8px;">100%</div>
+          <div style="font-size: 1.1rem; font-weight: 600; color: #1e293b; margin-bottom: 4px;">Reliable</div>
+          <div style="font-size: 0.9rem; color: #64748b;">On-Time Delivery</div>
+        </div>
+      </div>
+
+      <!-- Service Areas -->
+      <div class="service-areas" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 60px;">
+        <!-- Major Cities Card -->
+        <div class="service-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 24px; padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.4s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(14, 165, 233, 0.05)); border-radius: 0 24px 0 100px;"></div>
+          <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <h3 style="margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; color: #1e293b;">Major Cities</h3>
+          <p style="margin: 0 0 20px 0; color: #64748b; font-size: 1rem; line-height: 1.6;">Premium delivery service in Pakistan's largest metropolitan areas with same-day options.</p>
+          <div class="city-list" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+            <span class="city-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Karachi</span>
+            <span class="city-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Lahore</span>
+            <span class="city-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Islamabad</span>
+            <span class="city-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Rawalpindi</span>
+            <span class="city-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Peshawar</span>
+            <span class="city-tag" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">+45 More</span>
+          </div>
+          <ul style="margin: 0; padding: 0; list-style: none;">
+            <li style="display: flex; align-items: center; margin-bottom: 12px; color: #475569; font-size: 0.95rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="margin-right: 8px; min-width: 16px;">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Residential & office delivery
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 12px; color: #475569; font-size: 0.95rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="margin-right: 8px; min-width: 16px;">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Subscription & bulk plans
+            </li>
+            <li style="display: flex; align-items: center; color: #475569; font-size: 0.95rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="margin-right: 8px; min-width: 16px;">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Same-day delivery available
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Details Card -->
+        <div class="service-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 24px; padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.4s ease; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(5, 150, 105, 0.1), rgba(5, 150, 105, 0.05)); border-radius: 0 24px 0 100px;"></div>
+          <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #059669, #047857); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <h3 style="margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; color: #1e293b;">Service Hours</h3>
+          <p style="margin: 0 0 20px 0; color: #64748b; font-size: 1rem; line-height: 1.6;">Flexible delivery schedules to fit your lifestyle and business needs.</p>
+          <div class="schedule" style="background: rgba(5, 150, 105, 0.05); border-radius: 12px; padding: 20px; margin-bottom: 24px; border: 1px solid rgba(5, 150, 105, 0.1);">
+            <div style="color: #059669; font-weight: 600; text-align: center; font-size: 1rem;">
+              Mon–Sat 9:00–20:00 • Sun 10:00–16:00 (PKT)
+            </div>
+          </div>
+          <div class="payment-methods" style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="payment-tag" style="background: rgba(5, 150, 105, 0.1); color: #059669; padding: 8px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Cash on Delivery</span>
+            <span class="payment-tag" style="background: rgba(5, 150, 105, 0.1); color: #059669; padding: 8px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Bank Transfer</span>
+            <span class="payment-tag" style="background: rgba(5, 150, 105, 0.1); color: #059669; padding: 8px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">JazzCash</span>
+            <span class="payment-tag" style="background: rgba(5, 150, 105, 0.1); color: #059669; padding: 8px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Easypaisa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Place an Order -->
+  <section id="order" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); position: relative; overflow: hidden;">
+    <!-- Background Elements -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(5, 150, 105, 0.05) 0%, transparent 50%); pointer-events: none;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <!-- Section Header -->
+      <div class="section-head" style="text-align: center; margin-bottom: 80px;">
+        <h2 style="margin: 0 0 24px 0; font-size: 3rem; font-weight: 800; color: #1e293b; line-height: 1.2;">Place an Order</h2>
+      </div>
+      <!-- Order Form Container -->
+      <div class="order-container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; max-width: 1200px; margin: 0 auto;">
+        <!-- Order Form -->
+        <div class="order-form-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 24px; padding: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3);">
+          <div style="margin-bottom: 32px;">
+            <h3 style="margin: 0 0 8px 0; font-size: 1.5rem; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M9 11H5a2 2 0 0 0-2 2v3c0 1.1.9 2 2 2h4m6-6h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4m-6 0V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"/>
+                </svg>
+              </div>
+              Order Details
+            </h3>
+            <p style="margin: 0; color: #64748b; font-size: 1rem;">Fill in your information for fast delivery</p>
+          </div>
+
+          <form id="orderForm" novalidate style="display: grid; gap: 24px;">
+            <!-- Personal Information -->
+            <div class="form-section">
+              <h4 style="margin: 0 0 16px 0; font-size: 1.1rem; font-weight: 600; color: #1e293b; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0;">Personal Information</h4>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label for="name" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 0.95rem;">Full Name *</label>
+                  <input id="name" name="name" placeholder="Muhammad Ali" required style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: white;" />
+                </div>
+                <div class="form-group">
+                  <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 0.95rem;">Phone / WhatsApp *</label>
+                  <input id="phone" name="phone" placeholder="03xx-xxxxxxx" required style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: white;" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Delivery Information -->
+            <div class="form-section">
+              <h4 style="margin: 0 0 16px 0; font-size: 1.1rem; font-weight: 600; color: #1e293b; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0;">Delivery Information</h4>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div class="form-group">
+                  <label for="city" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 0.95rem;">City *</label>
+                  <input id="city" name="city" list="cities" placeholder="Islamabad" required style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: white;" />
+                  <datalist id="cities">
+                    <option>Karachi</option><option>Lahore</option><option>Islamabad</option><option>Rawalpindi</option><option>Peshawar</option><option>Faisalabad</option><option>Multan</option><option>Quetta</option>
+                  </datalist>
+                </div>
+                <div class="form-group">
+                  <label for="address" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 0.95rem;">Address *</label>
+                  <input id="address" name="address" placeholder="House #, Street, Area" required style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: white;" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary-section" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid rgba(14, 165, 233, 0.2); border-radius: 16px; padding: 20px; margin: 8px 0;">
+              <h4 style="margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 700; color: #0ea5e9; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+                Order Summary
+              </h4>
+              <div id="orderSummary" style="color: #0369a1; font-size: 1rem; font-weight: 500; line-height: 1.5;">
+                No items selected. Please add items from the product section above.
+              </div>
+              <input type="hidden" id="orderSmallQty" name="small_quantity" value="0" />
+              <input type="hidden" id="orderLargeQty" name="large_quantity" value="0" />
+              <input type="hidden" id="orderTotal" name="order_total" value="0" />
+            </div>
+
+            <!-- Payment Options -->
+            <div class="form-section">
+              <h4 style="margin: 0 0 16px 0; font-size: 1.1rem; font-weight: 600; color: #1e293b; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0;">Payment Method</h4>
+              <div class="form-group">
+                <label for="payment" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 0.95rem;">Payment Method *</label>
+                <select id="payment" name="payment" required style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: white;">
+                  <option value="cod">Cash on Delivery</option>
+                  <option value="bank">Bank Transfer</option>
+                  <option value="jazz">JazzCash</option>
+                  <option value="easy">Easypaisa</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="form-section">
+              <h4 style="margin: 0 0 16px 0; font-size: 1.1rem; font-weight: 600; color: #1e293b; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0;">Additional Information</h4>
+              <div class="form-group">
+                <label for="notes" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 0.95rem;">Special Instructions</label>
+                <textarea id="notes" name="notes" placeholder="E.g., gate code, subscription request, delivery instructions..." style="width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease; background: white; min-height: 100px; resize: vertical;"></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section" style="padding-top: 16px; border-top: 2px solid #e2e8f0;">
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px 24px; font-size: 1.1rem; font-weight: 700; border-radius: 16px; background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3); display: flex; align-items: center; justify-content: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+                Submit Order
+              </button>
+              <p style="margin: 16px 0 0 0; text-align: center; color: #64748b; font-size: 0.9rem;">
+                By ordering you agree to our <a href="#" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">Terms & Conditions</a>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact & Support Card -->
+        <div class="contact-support-card" style="background: rgba(255, 255, 255, 0.9); border-radius: 24px; padding: 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); height: fit-content;">
+          <div style="margin-bottom: 32px;">
+            <h3 style="margin: 0 0 8px 0; font-size: 1.5rem; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 12px;">
+              <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #059669, #047857); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              Contact & Support
+            </h3>
+            <p style="margin: 0; color: #64748b; font-size: 1rem;">Need help? Get in touch with our team</p>
+          </div>
+
+          <!-- Contact Methods -->
+          <div class="contact-methods" style="display: grid; gap: 20px; margin-bottom: 32px;">
+            <div class="contact-item" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(14, 165, 233, 0.1)); border-radius: 16px; border: 1px solid rgba(14, 165, 233, 0.2); transition: all 0.3s ease;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin: 0 0 4px 0; font-size: 1rem; font-weight: 600; color: #1e293b;">Phone</h4>
+                <a href="tel:+923001234567" style="color: #0ea5e9; text-decoration: none; font-weight: 500;">+92 300 1234567</a>
+              </div>
+            </div>
+
+            <div class="contact-item" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(135deg, rgba(5, 150, 105, 0.05), rgba(5, 150, 105, 0.1)); border-radius: 16px; border: 1px solid rgba(5, 150, 105, 0.2); transition: all 0.3s ease;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #059669, #047857); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin: 0 0 4px 0; font-size: 1rem; font-weight: 600; color: #1e293b;">WhatsApp</h4>
+                <a href="https://wa.me/923001234567" target="_blank" rel="noopener" style="color: #059669; text-decoration: none; font-weight: 500;">+92 300 1234567</a>
+              </div>
+            </div>
+
+            <div class="contact-item" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(124, 58, 237, 0.1)); border-radius: 16px; border: 1px solid rgba(124, 58, 237, 0.2); transition: all 0.3s ease;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin: 0 0 4px 0; font-size: 1rem; font-weight: 600; color: #1e293b;">Email</h4>
+                <a href="mailto:hello@sixteen16.pk" style="color: #7c3aed; text-decoration: none; font-weight: 500;">hello@sixteen16.pk</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Hours & Warehouse -->
+          <div class="business-hours" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 16px; padding: 20px; border: 1px solid #e2e8f0;">
+            <div style="margin-bottom: 20px;">
+              <h4 style="margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12,6 12,12 16,14"/>
+                </svg>
+                Business Hours
+              </h4>
+              <div style="color: #374151; font-weight: 500; font-size: 0.95rem;">
+                Mon–Sat 9:00–20:00 • Sun 10:00–16:00 (PKT)
+              </div>
+            </div>
+
+            <div>
+              <h4 style="margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Warehouse
+              </h4>
+              <div style="color: #374151; font-weight: 500; line-height: 1.5; font-size: 0.95rem;">
+                I‑9 Industrial Area, Islamabad (for pickup by appointment)
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Order Note -->
+          <div style="margin-top: 24px; padding: 16px; background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.1)); border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+            <p style="margin: 0; color: #dc2626; font-size: 0.9rem; font-weight: 500; text-align: center;">
+              <strong>Urgent orders?</strong> Call or WhatsApp us directly for same-day delivery
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About sixteen16 -->
+  <section id="contact" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; position: relative; overflow: hidden;">
+    <!-- Background Elements -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.1) 0%, transparent 50%); pointer-events: none;"></div>
+    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -50px; left: -50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <!-- Section Header -->
+      <div class="section-head" style="text-align: center; margin-bottom: 80px;">
+        <h2 style="margin: 0 0 24px 0; font-size: 3rem; font-weight: 800; color: white; line-height: 1.2;">About sixteen16</h2>
+      </div>
+
+      <!-- Brand Story & Values -->
+      <div class="about-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px;">
+
+        <!-- Our Mission -->
+        <div class="about-card" style="background: rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 40px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.4s ease;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3 style="margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; color: white;">Our Mission</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 1rem; line-height: 1.6;">To provide every Pakistani family and business with access to premium quality mineral water that meets international standards while supporting local communities.</p>
+        </div>
+
+        <!-- Quality Promise -->
+        <div class="about-card" style="background: rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 40px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.4s ease;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #059669, #047857); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <path d="M3 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+              <circle cx="12" cy="12" r="9"/>
+            </svg>
+          </div>
+          <h3 style="margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; color: white;">Quality Promise</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 1rem; line-height: 1.6;">Every drop undergoes rigorous testing and multi-stage purification. We guarantee purity, safety, and consistent taste in every bottle we deliver.</p>
+        </div>
+
+        <!-- Customer First -->
+        <div class="about-card" style="background: rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 40px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.4s ease;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3 style="margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; color: white;">Customer First</h3>
+          <p style="margin: 0; color: #cbd5e1; font-size: 1rem; line-height: 1.6;">Your satisfaction drives everything we do. From responsive customer service to flexible delivery options, we're here to serve you better.</p>
+        </div>
+      </div>
+
+
+
+      <!-- Footer Links -->
+      <div class="footer-links" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+
+        <!-- Why Choose Us -->
+        <div class="footer-section">
+          <h3 style="margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+            </div>
+            Why Choose Us
+          </h3>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; gap: 12px;">
+            <li style="color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Reliable nationwide delivery
+            </li>
+            <li style="color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Strict quality standards
+            </li>
+            <li style="color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Transparent pricing
+            </li>
+            <li style="color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              24/7 customer support
+            </li>
+            <li style="color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"/>
+              </svg>
+              Flexible subscriptions
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3 style="margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #059669, #047857); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+            </div>
+            Quick Links
+          </h3>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; gap: 12px;">
+            <li><a href="#products" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+              Our Products
+            </a></li>
+            <li><a href="#quality" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+              Quality & Purification
+            </a></li>
+            <li><a href="#delivery" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+              Delivery Coverage
+            </a></li>
+            <li><a href="#order" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+              Place an Order
+            </a></li>
+            <li><a href="#contact" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; display: flex; align-items: center; gap: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6"/>
+              </svg>
+              Contact Us
+            </a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h3 style="margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            Business Hours
+          </h3>
+          <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+            Mon–Sat 9:00–20:00 • Sun 10:00–16:00 (PKT)
+          </div>
+
+          <h4 style="margin: 0 0 12px 0; font-size: 1.1rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Warehouse
+          </h4>
+          <div style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6;">
+            I‑9 Industrial Area, Islamabad (for pickup by appointment)
+          </div>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="footer-section">
+          <h3 style="margin: 0 0 20px 0; font-size: 1.3rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 12px;">
+            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </div>
+            Follow Us
+          </h3>
+          <div style="display: grid; gap: 12px;">
+            <a href="#" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 8px; background: rgba(255, 255, 255, 0.05);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+              Facebook
+            </a>
+            <a href="#" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 8px; background: rgba(255, 255, 255, 0.05);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              Instagram
+            </a>
+            <a href="#" style="color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 8px; background: rgba(255, 255, 255, 0.05);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+              TikTok
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Copyright -->
+  <footer style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden;">
+    <!-- Background Elements -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(5, 150, 105, 0.05) 0%, transparent 50%); pointer-events: none;"></div>
+
+    <div class="container" style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 32px 0; gap: 20px;">
+
+      <!-- Copyright Section -->
+      <div class="copyright-section" style="display: flex; align-items: center; gap: 16px;">
+        <!-- Brand Logo -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #0ea5e9, #22d3ee); display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.1rem; box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);">16</div>
+          <div style="color: white; font-weight: 700; font-size: 1.1rem;">sixteen16</div>
+        </div>
+
+        <!-- Copyright Text -->
+        <div style="color: #94a3b8; font-size: 0.9rem; font-weight: 500;">
+          © <span id="year"></span> All rights reserved.
+        </div>
+      </div>
+
+      <!-- Made in Pakistan Section -->
+      <div class="made-in-section" style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <!-- Pakistan Flag Icon -->
+        <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #059669, #047857); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+
+        <!-- Made in Pakistan Text -->
+        <div style="display: flex; align-items: center; gap: 8px; color: #e2e8f0; font-size: 0.9rem; font-weight: 600;">
+          <span>Made in Pakistan</span>
+          <div style="width: 4px; height: 4px; background: #059669; border-radius: 50%;"></div>
+          <span style="color: #cbd5e1; font-weight: 500;">Crafted with care</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-whatsapp" style="position: fixed; bottom: 24px; right: 24px; z-index: 1000;">
+    <!-- Main WhatsApp Button -->
+    <a href="https://wa.me/923001234567?text=Hi%20sixteen16!%20I%27d%20like%20to%20place%20an%20order%20for%20mineral%20water."
+       target="_blank"
+       rel="noopener"
+       aria-label="WhatsApp sixteen16 for quick order"
+       class="whatsapp-btn"
+       style="display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; text-decoration: none; padding: 16px 20px; border-radius: 50px; box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); font-weight: 600; font-size: 1rem; backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.2); position: relative; overflow: hidden; animation: blink 2s ease-in-out infinite, glow 3s ease-in-out infinite;">
+
+      <!-- Background Animation -->
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%); transform: translateX(-100%); transition: transform 0.6s ease;"></div>
+
+      <!-- WhatsApp Icon -->
+      <div class="whatsapp-icon" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+      </div>
+
+      <!-- Button Text -->
+      <span class="whatsapp-text" style="position: relative; z-index: 2; white-space: nowrap;">WhatsApp Order</span>
+
+      <!-- Pulse Animation -->
+      <div class="pulse-ring" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; border: 2px solid rgba(37, 211, 102, 0.6); border-radius: 50px; animation: pulse 2s infinite;"></div>
+    </a>
+
+    <!-- Tooltip -->
+    <div class="whatsapp-tooltip" style="position: absolute; bottom: 100%; right: 0; margin-bottom: 12px; background: rgba(0, 0, 0, 0.8); color: white; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; white-space: nowrap; opacity: 0; transform: translateY(8px); transition: all 0.3s ease; pointer-events: none; backdrop-filter: blur(10px);">
+      Chat with us on WhatsApp
+      <div style="position: absolute; top: 100%; right: 16px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid rgba(0, 0, 0, 0.8);"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Order submitted! We will confirm shortly.</div>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle?.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('active');
+      
+      // Toggle body scroll when menu is open
+      document.body.style.overflow = !expanded ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = ''; // Re-enable body scroll
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileMenu?.classList.contains('active') && 
+          !e.target.closest('#mobileMenu') && 
+          !e.target.closest('.menu-toggle')) {
+        mobileMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = ''; // Re-enable body scroll
+      }
+    });
+    
+    // Close menu on window resize if it becomes desktop view
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        mobileMenu?.classList.remove('active');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = ''; // Re-enable body scroll
+      }
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id && id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+          mobileMenu.style.display = 'none';
+        }
+      })
+    })
+
+    // Cart synchronization with order form
+    function updateOrderForm() {
+      const orderSummary = document.getElementById('orderSummary');
+      const orderSmallQty = document.getElementById('orderSmallQty');
+      const orderLargeQty = document.getElementById('orderLargeQty');
+      const orderTotal = document.getElementById('orderTotal');
+
+      if (!orderSummary) return; // Order form not loaded yet
+
+      // Get cart data from product section (if available)
+      const smallQty = document.getElementById('smallQty')?.textContent || '0';
+      const largeQty = document.getElementById('largeQty')?.textContent || '0';
+      const cartTotal = document.getElementById('cartTotal')?.textContent || '0';
+
+      const smallCount = parseInt(smallQty);
+      const largeCount = parseInt(largeQty);
+      const total = parseInt(cartTotal);
+
+      // Update hidden form fields
+      if (orderSmallQty) orderSmallQty.value = smallCount;
+      if (orderLargeQty) orderLargeQty.value = largeCount;
+      if (orderTotal) orderTotal.value = total;
+
+      // Update order summary display
+      let summaryText = '';
+      if (smallCount > 0 && largeCount > 0) {
+        summaryText = `${smallCount} Small bottles (500ml) + ${largeCount} Large bottles (1.5L) = PKR ${total}`;
+      } else if (smallCount > 0) {
+        summaryText = `${smallCount} Small bottles (500ml) = PKR ${total}`;
+      } else if (largeCount > 0) {
+        summaryText = `${largeCount} Large bottles (1.5L) = PKR ${total}`;
+      } else {
+        summaryText = 'No items selected. Please add items from the product section above.';
+      }
+
+      orderSummary.textContent = summaryText;
+    }
+
+    // Update order form when page loads and when cart changes
+    document.addEventListener('DOMContentLoaded', updateOrderForm);
+
+    // Check for URL parameters and update cart accordingly
+    function loadCartFromURL() {
+      const urlParams = new URLSearchParams(window.location.search || window.location.hash.split('?')[1]);
+      const smallQty = parseInt(urlParams.get('small_qty')) || 0;
+      const largeQty = parseInt(urlParams.get('large_qty')) || 0;
+
+      if (smallQty > 0 || largeQty > 0) {
+        // Update cart if we have URL parameters
+        if (window.cart) {
+          window.cart.small = smallQty;
+          window.cart.large = largeQty;
+          if (window.updateCartDisplay) {
+            window.updateCartDisplay();
+          }
+        }
+        updateOrderForm();
+      }
+    }
+
+    // Load cart from URL on page load
+    window.addEventListener('load', loadCartFromURL);
+
+    // Old product page functionality removed - using cart system instead
+
+    // Form handling for index.html order form (if exists)
+    (function() {
+      const form = document.getElementById('orderForm');
+      const toast = document.getElementById('toast');
+
+      if (!form) return; // Exit if form doesn't exist - order.html handles its own form
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // basic validation
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.name || !data.phone || !data.city || !data.address) {
+          if (window.showToast) {
+            showToast('Please fill all required fields.');
+          }
+          return;
+        }
+
+        // Get cart data for order
+        const orderData = {
+          customer: {
+            name: data.name,
+            phone: data.phone,
+            email: data.email || '',
+            address: `${data.address}, ${data.area || ''}, ${data.city}`
+          },
+          order: {
+            items: [
+              ...(window.cart && window.cart.small > 0 ? [{
+                product: 'sixteen16 Premium Water (500ml)',
+                quantity: window.cart.small,
+                price: 60,
+                total: window.cart.small * 60
+              }] : []),
+              ...(window.cart && window.cart.large > 0 ? [{
+                product: 'sixteen16 Premium Water (1.5L)',
+                quantity: window.cart.large,
+                price: 350,
+                total: window.cart.large * 350
+              }] : [])
+            ],
+            total: (window.cart ? (window.cart.small * 60) + (window.cart.large * 350) : 0),
+            paymentMethod: data.payment || 'cod',
+            paymentStatus: 'pending',
+            specialInstructions: data.notes || ''
+          },
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          const res = await fetch('/api/orders', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+          });
+
+          if (!res.ok) throw new Error('Network error');
+
+          if (window.showToast) {
+            showToast('Order submitted! We will confirm shortly.');
+          }
+          form.reset();
+          // Reset cart
+          if (window.cart) {
+            window.cart.small = 0;
+            window.cart.large = 0;
+            if (window.updateCartDisplay) {
+              window.updateCartDisplay();
+            }
+          }
+        } catch (err) {
+          console.error(err);
+          if (window.showToast) {
+            showToast('Could not submit order. Please try WhatsApp.');
+          }
+        }
+      });
+
+  // Show toast notification
+  function showToast(msg) {
+    if (toast) {
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        if (toast) toast.style.display = 'none';
+      }, 3500);
+    }
+  }
+})(); // Close the IIFE
+
+  // Basic JSON-LD for SEO
+  // Enhanced Mobile Menu Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuToggle && mobileMenu) {
+      // Toggle mobile menu
+      mobileMenuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        this.setAttribute('aria-expanded', !isExpanded);
+
+        if (!isExpanded) {
+          mobileMenu.style.display = 'block';
+          setTimeout(() => {
+            mobileMenu.style.opacity = '1';
+            mobileMenu.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          mobileMenu.style.opacity = '0';
+          mobileMenu.style.transform = 'translateY(-10px)';
+          setTimeout(() => {
+            mobileMenu.style.display = 'none';
+          }, 300);
+        }
+      });
+
+      // Close mobile menu when clicking on links
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mobileMenu.style.opacity = '0';
+          mobileMenu.style.transform = 'translateY(-10px)';
+          setTimeout(() => {
+            mobileMenu.style.display = 'none';
+          }, 300);
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+          if (mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            mobileMenu.style.opacity = '0';
+            mobileMenu.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+              mobileMenu.style.display = 'none';
+            }, 300);
+          }
+        }
+      });
+
+      // Initialize mobile menu styles
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.transform = 'translateY(-10px)';
+      mobileMenu.style.transition = 'all 0.3s ease';
+    }
+  });
+
+  (function() {
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "sixteen16",
+      "url": "https://example.com",
+      "logo": "https://example.com/logo.png",
+      "email": "hello@sixteen16.pk",
+      "telephone": "+92 300 1234567",
+      "areaServed": "PK",
+      "sameAs": ["https://facebook.com/", "https://instagram.com/"],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "sixteen16 – Small 500 ml"
+          },
+          "priceCurrency": "PKR",
+          "price": "60"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "sixteen16 – Large 19 L"
+          },
+          "priceCurrency": "PKR",
+          "price": "350"
+        }
+      ]
+    };
+
+    // Add JSON-LD to document
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(ld, null, 2);
+    document.head.appendChild(script);
+  })();
+  </script>
+</body>
+</html>

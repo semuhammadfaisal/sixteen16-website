@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Cart Total</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+    button { padding: 10px 20px; margin: 5px; background: #0ea5e9; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .total-display { font-size: 2rem; font-weight: bold; color: #0ea5e9; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>Cart Total Test</h1>
+  
+  <div class="test-section">
+    <h3>Cart State</h3>
+    <p>Small: <span id="smallQty">0</span></p>
+    <p>Large: <span id="largeQty">0</span></p>
+    
+    <div class="total-display">
+      Total: PKR <span id="cartTotal">0</span>
+    </div>
+    
+    <button onclick="updateCartQuantity('small', 1)">Add Small</button>
+    <button onclick="updateCartQuantity('small', -1)">Remove Small</button>
+    <button onclick="updateCartQuantity('large', 1)">Add Large</button>
+    <button onclick="updateCartQuantity('large', -1)">Remove Large</button>
+    <button onclick="testElements()">Test Elements</button>
+  </div>
+
+  <script>
+    // Cart system
+    window.cart = {
+      small: 0,
+      large: 0
+    };
+    
+    const prices = {
+      small: 60,
+      large: 350
+    };
+    
+    function updateCartQuantity(size, change) {
+      console.log('Updating cart:', size, change);
+      window.cart[size] = Math.max(0, window.cart[size] + change);
+      console.log('New cart state:', window.cart);
+      updateCartDisplay();
+    }
+    
+    function updateCartDisplay() {
+      console.log('updateCartDisplay called');
+      
+      // Update quantity displays
+      const smallQtyElement = document.getElementById('smallQty');
+      const largeQtyElement = document.getElementById('largeQty');
+      const cartTotalElement = document.getElementById('cartTotal');
+      
+      console.log('Elements found:', {
+        smallQty: !!smallQtyElement,
+        largeQty: !!largeQtyElement,
+        cartTotal: !!cartTotalElement
+      });
+      
+      if (smallQtyElement) smallQtyElement.textContent = window.cart.small;
+      if (largeQtyElement) largeQtyElement.textContent = window.cart.large;
+      
+      // Calculate total
+      const total = (window.cart.small * prices.small) + (window.cart.large * prices.large);
+      console.log('Calculated total:', total);
+      
+      if (cartTotalElement) {
+        cartTotalElement.textContent = total;
+        console.log('Updated cartTotal to:', total);
+      } else {
+        console.error('cartTotal element not found!');
+      }
+    }
+    
+    function testElements() {
+      console.log('Testing elements...');
+      console.log('smallQty element:', document.getElementById('smallQty'));
+      console.log('largeQty element:', document.getElementById('largeQty'));
+      console.log('cartTotal element:', document.getElementById('cartTotal'));
+      
+      // Try to update manually
+      const cartTotalElement = document.getElementById('cartTotal');
+      if (cartTotalElement) {
+        cartTotalElement.textContent = '999';
+        console.log('Manual update successful');
+      }
+    }
+    
+    // Initialize
+    updateCartDisplay();
+  </script>
+</body>
+</html>

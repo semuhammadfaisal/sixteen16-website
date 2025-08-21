@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Order Data</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .debug { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    pre { background: #333; color: #fff; padding: 10px; border-radius: 5px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>Order Data Test</h1>
+  
+  <div class="debug">
+    <h3>URL Parameters:</h3>
+    <div id="urlParams"></div>
+  </div>
+  
+  <div class="debug">
+    <h3>Parsed Quantities:</h3>
+    <div id="quantities"></div>
+  </div>
+  
+  <div class="debug">
+    <h3>Generated Order Data:</h3>
+    <pre id="orderData"></pre>
+  </div>
+  
+  <button onclick="testOrder()">Generate Test Order</button>
+  
+  <script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const smallQty = parseInt(urlParams.get('small_qty')) || 0;
+    const largeQty = parseInt(urlParams.get('large_qty')) || 0;
+    
+    // Display URL parameters
+    document.getElementById('urlParams').innerHTML = `
+      <p>small_qty: ${urlParams.get('small_qty')} (parsed: ${smallQty})</p>
+      <p>large_qty: ${urlParams.get('large_qty')} (parsed: ${largeQty})</p>
+      <p>Full URL: ${window.location.href}</p>
+    `;
+    
+    // Display quantities
+    document.getElementById('quantities').innerHTML = `
+      <p>Small bottles: ${smallQty}</p>
+      <p>Large bottles: ${largeQty}</p>
+      <p>Total items: ${smallQty + largeQty}</p>
+    `;
+    
+    // Prices
+    const prices = { small: 60, large: 350 };
+    
+    function testOrder() {
+      const orderItems = [];
+      
+      if (smallQty > 0) {
+        orderItems.push({
+          product: 'sixteen16 Premium Water (500ml)',
+          quantity: smallQty,
+          price: prices.small,
+          total: smallQty * prices.small
+        });
+      }
+      
+      if (largeQty > 0) {
+        orderItems.push({
+          product: 'sixteen16 Premium Water (1.5L)',
+          quantity: largeQty,
+          price: prices.large,
+          total: largeQty * prices.large
+        });
+      }
+      
+      const formData = {
+        customer: {
+          name: 'Test Customer',
+          phone: '1234567890',
+          email: 'test@example.com',
+          address: 'Test Address, Test Area, Test City'
+        },
+        order: {
+          items: orderItems,
+          total: (smallQty * prices.small) + (largeQty * prices.large),
+          paymentMethod: 'cod',
+          paymentStatus: 'pending',
+          specialInstructions: 'Test order'
+        }
+      };
+      
+      document.getElementById('orderData').textContent = JSON.stringify(formData, null, 2);
+      
+      console.log('Generated order data:', formData);
+    }
+    
+    // Auto-generate on page load
+    testOrder();
+  </script>
+</body>
+</html>

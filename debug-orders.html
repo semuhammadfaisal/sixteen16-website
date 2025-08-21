@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Orders</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .order { border: 1px solid #ccc; margin: 10px 0; padding: 15px; border-radius: 5px; }
+    .order-header { font-weight: bold; margin-bottom: 10px; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    .analysis { background: #e8f4fd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Order Data Debug</h1>
+  <button onclick="loadOrders()">Load Orders</button>
+  <div id="ordersContainer">Click "Load Orders" to see data</div>
+
+  <script>
+    async function loadOrders() {
+      const container = document.getElementById('ordersContainer');
+      
+      try {
+        const response = await fetch('/api/orders');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const orders = await response.json();
+        console.log('Raw orders from API:', orders);
+        
+        if (!orders || orders.length === 0) {
+          container.innerHTML = '<p>No orders found</p>';
+          return;
+        }
+        
+        let html = `<h2>Found ${orders.length} orders:</h2>`;
+        
+        orders.forEach((order, index) => {
+          html += `
+            <div class="order">
+              <div class="order-header">Order #${index + 1} (ID: ${order.id || 'N/A'})</div>
+              
+              <div class="analysis">
+                <h4>Quick Analysis:</h4>
+                <p><strong>Customer:</strong> ${order.customer?.name || 'N/A'}</p>
+                <p><strong>Total:</strong> ${order.order?.total || 'N/A'}</p>
+                <p><strong>Has order.order?</strong> ${order.order ? 'Yes' : 'No'}</p>
+                <p><strong>Has order.order.items?</strong> ${order.order?.items ? 'Yes' : 'No'}</p>
+                <p><strong>Items type:</strong> ${order.order?.items ? typeof order.order.items : 'N/A'}</p>
+                <p><strong>Items is array?</strong> ${Array.isArray(order.order?.items) ? 'Yes' : 'No'}</p>
+                <p><strong>Items length:</strong> ${Array.isArray(order.order?.items) ? order.order.items.length : 'N/A'}</p>
+                
+                ${order.order?.items && Array.isArray(order.order.items) ? 
+                  `<p><strong>Items content:</strong> ${order.order.items.map(item => `${item.quantity} x ${item.product}`).join(', ')}</p>` : 
+                  ''}
+                
+                <p><strong>Has old format (product/quantity)?</strong> ${order.order?.product && order.order?.quantity ? 'Yes' : 'No'}</p>
+                ${order.order?.product ? `<p><strong>Old format:</strong> ${order.order.quantity} x ${order.order.product}</p>` : ''}
+              </div>
+              
+              <h4>Raw Order Data:</h4>
+              <pre>${JSON.stringify(order, null, 2)}</pre>
+            </div>
+          `;
+        });
+        
+        container.innerHTML = html;
+        
+      } catch (error) {
+        console.error('Error loading orders:', error);
+        container.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - sixteen16 Orders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0ea5e9;
+      --text: #1e293b;
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); padding: 20px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; margin-bottom: 30px; }
+    h1 { color: var(--primary); }
+    .orders-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .order-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .order-header { display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .order-status { padding: 2px 8px; border-radius: 12px; font-size: 0.8em; font-weight: 500; }
+    .status-pending { background: #fef3c7; color: #92400e; }
+    .status-paid { background: #d1fae5; color: #065f46; }
+    .detail { margin: 5px 0; }
+    .detail-label { font-weight: 500; color: #64748b; }
+    .btn { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; }
+    .btn-primary { background: var(--primary); color: white; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>sixteen16 Orders</h1>
+      <button id="refreshBtn" class="btn btn-primary">Refresh</button>
+    </header>
+    <div id="ordersContainer" class="orders-grid">Loading orders...</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', loadOrders);
+    document.getElementById('refreshBtn').addEventListener('click', loadOrders);
+
+    async function loadOrders() {
+      const container = document.getElementById('ordersContainer');
+      try {
+        const res = await fetch('/api/orders');
+        if (!res.ok) throw new Error('Failed to load orders');
+        const orders = await res.json();
+        container.innerHTML = orders.length ? 
+          orders.map(order => createOrderCard(order)).join('') : 
+          'No orders found';
+      } catch (err) {
+        container.innerHTML = `Error: ${err.message}`;
+      }
+    }
+
+    function formatOrderItems(orderData) {
+      // Handle null/undefined
+      if (!orderData) {
+        return 'No order data';
+      }
+
+      // Strategy 1: Check for items array (new cart system format)
+      if (orderData.items && Array.isArray(orderData.items) && orderData.items.length > 0) {
+        return orderData.items.map(item =>
+          `${item.quantity || 0} x ${item.product || 'Unknown Product'}`
+        ).join(', ');
+      }
+
+      // Strategy 2: Check for old single product format
+      if (orderData.product && orderData.quantity) {
+        return `${orderData.quantity} x ${orderData.product}`;
+      }
+
+      // Strategy 3: Check for size-based format (legacy)
+      if (orderData.size && orderData.quantity) {
+        const productName = orderData.size === 'small' ?
+          'sixteen16 Premium Water (500ml)' :
+          'sixteen16 Premium Water (1.5L)';
+        return `${orderData.quantity} x ${productName}`;
+      }
+
+      // Strategy 4: Check for form-based data (from index.html form)
+      if (orderData.small_quantity || orderData.large_quantity) {
+        const items = [];
+        if (orderData.small_quantity && orderData.small_quantity > 0) {
+          items.push(`${orderData.small_quantity} x sixteen16 Premium Water (500ml)`);
+        }
+        if (orderData.large_quantity && orderData.large_quantity > 0) {
+          items.push(`${orderData.large_quantity} x sixteen16 Premium Water (1.5L)`);
+        }
+        return items.length > 0 ? items.join(', ') : 'No items';
+      }
+
+      // Strategy 5: Check if items array exists but is empty
+      if (orderData.items && Array.isArray(orderData.items) && orderData.items.length === 0) {
+        return 'Empty cart';
+      }
+
+      // Strategy 6: Last resort - try to extract any quantity/product info
+      const keys = Object.keys(orderData);
+      const qtyKeys = keys.filter(k => k.toLowerCase().includes('qty') || k.toLowerCase().includes('quantity'));
+      const productKeys = keys.filter(k => k.toLowerCase().includes('product') || k.toLowerCase().includes('item'));
+
+      if (qtyKeys.length > 0 && productKeys.length > 0) {
+        return `${orderData[qtyKeys[0]]} x ${orderData[productKeys[0]]}`;
+      }
+
+      // Give up and show available data
+      return `No items found (available: ${keys.join(', ')})`;
+    }
+
+    function createOrderCard(order) {
+      return `
+        <div class="order-card">
+          <div class="order-header">
+            <strong>#${order.id || 'N/A'}</strong>
+            <span class="order-status status-${order.status || 'pending'}">
+              ${order.status || 'pending'}
+            </span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Customer:</span> ${order.customer?.name || 'N/A'}
+          </div>
+          <div class="detail">
+            <span class="detail-label">Phone:</span> ${order.customer?.phone || 'N/A'}
+          </div>
+          <div class="detail">
+            <span class="detail-label">Total:</span> PKR ${order.order?.total?.toFixed(2) || '0.00'}
+          </div>
+          <div class="detail">
+            <span class="detail-label">Payment:</span> ${order.order?.paymentMethod || 'N/A'}
+          </div>
+          <div class="detail">
+            <span class="detail-label">Items:</span> ${(() => {
+              const orderItems = formatOrderItems(order.order);
+              if (orderItems.includes('No items found') || orderItems.includes('No order data')) {
+                return formatOrderItems(order);
+              }
+              return orderItems;
+            })()}
+          </div>
+          <div class="detail">
+            <span class="detail-label">Order Type:</span> ${order.orderType || 'legacy'}
+          </div>
+          <div class="detail">
+            <span class="detail-label">Time:</span> ${order.timestamp ? new Date(order.timestamp).toLocaleString() : 'N/A'}
+          </div>
+          <details style="margin-top: 10px;">
+            <summary style="cursor: pointer; color: #666; font-size: 0.9em;">Debug: Raw Order Data</summary>
+            <pre style="background: #f5f5f5; padding: 8px; font-size: 0.8em; overflow-x: auto; margin-top: 5px;">${JSON.stringify(order, null, 2)}</pre>
+          </details>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

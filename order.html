@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now - sixteen16 Premium Water</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0ea5e9;
+      --primary-dark: #0284c7;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --error: #ef4444;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--bg);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      color: var(--text);
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 0;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+      padding: 40px 0;
+      min-height: calc(100vh - 200px);
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .page-header p {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Order Form */
+    .order-form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .order-summary {
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .order-summary h3 {
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+    }
+
+    .order-item .label {
+      color: var(--text-light);
+    }
+
+    .order-item .value {
+      font-weight: 500;
+    }
+
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 2px solid var(--border);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Payment Methods */
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .payment-option:hover {
+      border-color: var(--primary);
+      background-color: rgba(14, 165, 233, 0.05);
+    }
+
+    .payment-option input[type="radio"] {
+      margin-right: 12px;
+    }
+
+    .payment-option-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .payment-option span {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .payment-option small {
+      color: var(--text-light);
+      font-size: 0.85em;
+    }
+
+    .payment-option input[type="radio"]:checked + .payment-option-content span {
+      color: var(--primary);
+    }
+
+    .payment-option input[type="radio"]:checked + .payment-option-content small {
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--bg-soft);
+      padding: 30px 0;
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      
+      .order-form-container {
+        padding: 20px 15px;
+      }
+      
+      .page-header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>sixteen16</span>
+      </a>
+      <a href="index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Complete Your Order</h1>
+        <p>Fill in your details below and we'll get in touch with you shortly to confirm your order.</p>
+      </div>
+
+      <div class="order-form-container">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <div id="orderItems">
+            <!-- Order items will be populated by JavaScript -->
+          </div>
+          <div class="order-total">
+            <span>Total</span>
+            <span id="orderTotal">PKR 0</span>
+          </div>
+        </div>
+
+        <form id="orderForm">
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City <span class="required">*</span></label>
+              <select id="city" class="form-control" required>
+                <option value="" disabled selected>Select City</option>
+                <option value="karachi">Karachi</option>
+                <option value="lahore">Lahore</option>
+                <option value="islamabad">Islamabad/Rawalpindi</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="area">Area <span class="required">*</span></label>
+              <input type="text" id="area" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Complete Address <span class="required">*</span></label>
+            <textarea id="address" class="form-control" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Delivery Notes (Optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions for delivery"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cod" checked>
+                <div class="payment-option-content">
+                  <span>Cash on Delivery (COD)</span>
+                  <small>Pay when you receive your order</small>
+                </div>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="online">
+                <div class="payment-option-content">
+                  <span>Online Payment</span>
+                  <small>Pay securely with FastPay</small>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <div id="fastpay-container" style="display: none; margin: 15px 0;">
+            <!-- FastPay payment button will be loaded here -->
+            <button type="button" id="fastpay-button" class="btn">Pay with FastPay</button>
+          </div>
+
+          <div class="form-group" style="margin-top: 30px;">
+            <button type="submit" id="submit-order" class="btn btn-primary">Place Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© <span id="year">2025</span> sixteen16. All rights reserved. Premium Mineral Water.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Get URL parameters for cart system
+    const urlParams = new URLSearchParams(window.location.search);
+    const smallQty = parseInt(urlParams.get('small_qty')) || 0;
+    const largeQty = parseInt(urlParams.get('large_qty')) || 0;
+
+    // Debug: Log the URL parameters
+    console.log('URL parameters:', {
+      small_qty: urlParams.get('small_qty'),
+      large_qty: urlParams.get('large_qty'),
+      smallQty: smallQty,
+      largeQty: largeQty
+    });
+
+    // Prices
+    const prices = {
+      small: 60,
+      large: 350
+    };
+
+    // Update order summary based on cart parameters
+    function updateOrderSummary() {
+      const orderItemsContainer = document.getElementById('orderItems');
+      let totalAmount = 0;
+      let orderItemsHTML = '';
+
+      // Add small bottles if any
+      if (smallQty > 0) {
+        const smallTotal = smallQty * prices.small;
+        totalAmount += smallTotal;
+        orderItemsHTML += `
+          <div class="order-item">
+            <span class="label">Small Bottles (500ml)</span>
+            <span class="value">${smallQty} × PKR ${prices.small} = PKR ${smallTotal}</span>
+          </div>
+        `;
+      }
+
+      // Add large bottles if any
+      if (largeQty > 0) {
+        const largeTotal = largeQty * prices.large;
+        totalAmount += largeTotal;
+        orderItemsHTML += `
+          <div class="order-item">
+            <span class="label">Large Bottles (1.5L)</span>
+            <span class="value">${largeQty} × PKR ${prices.large} = PKR ${largeTotal}</span>
+          </div>
+        `;
+      }
+
+      // If no items, show error
+      if (totalAmount === 0) {
+        orderItemsHTML = `
+          <div class="order-item">
+            <span class="label" style="color: #ef4444;">No items selected</span>
+            <span class="value"><a href="index.html">Go back to add items</a></span>
+          </div>
+        `;
+      }
+
+      orderItemsContainer.innerHTML = orderItemsHTML;
+      document.getElementById('orderTotal').textContent = `PKR ${totalAmount}`;
+
+      return totalAmount;
+    }
+    
+    // Handle payment method selection
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const fastpayContainer = document.getElementById('fastpay-container');
+        if (this.value === 'online') {
+          fastpayContainer.style.display = 'block';
+        } else {
+          fastpayContainer.style.display = 'none';
+        }
+      });
+    });
+
+    // Initialize FastPay (replace with actual FastPay integration)
+    function initFastPay() {
+      document.getElementById('fastpay-button').addEventListener('click', function() {
+        const total = document.getElementById('orderTotal').textContent.replace('PKR ', '');
+        // In a real implementation, you would initialize FastPay payment here
+        alert('In a real implementation, this would redirect to FastPay for payment processing');
+        
+        // After successful payment, you would call processOrder(true)
+        processOrder(true);
+      });
+    }
+
+    // Process the order
+    async function processOrder(isPaid) {
+      const submitBtn = document.getElementById('submit-order');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+      
+      try {
+        // Validate that we have items to order
+        if (smallQty === 0 && largeQty === 0) {
+          throw new Error('No items selected. Please go back and add items to your cart.');
+        }
+
+        const orderItems = [];
+        if (smallQty > 0) {
+          orderItems.push({
+            product: 'sixteen16 Premium Water (500ml)',
+            quantity: smallQty,
+            price: prices.small,
+            total: smallQty * prices.small
+          });
+        }
+        if (largeQty > 0) {
+          orderItems.push({
+            product: 'sixteen16 Premium Water (1.5L)',
+            quantity: largeQty,
+            price: prices.large,
+            total: largeQty * prices.large
+          });
+        }
+
+        const formData = {
+          customer: {
+            name: document.getElementById('name').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            address: `${document.getElementById('address').value.trim()}, ${document.getElementById('area').value.trim()}, ${document.getElementById('city').value.trim()}`
+          },
+          order: {
+            items: orderItems,
+            total: parseFloat(document.getElementById('orderTotal').textContent.replace('PKR ', '').replace(/,/g, '')),
+            paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
+            paymentStatus: isPaid ? 'paid' : 'pending',
+            specialInstructions: document.getElementById('notes').value.trim()
+          },
+          timestamp: new Date().toISOString(),
+          orderType: 'cart-system' // To identify new orders
+        };
+        
+        // Debug: Log the data being sent
+        console.log('Sending order data:', JSON.stringify(formData, null, 2));
+
+        // Send order to backend
+        const response = await fetch('/api/orders', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.message || 'Failed to submit order');
+        }
+        
+        const result = await response.json();
+        return result;
+        
+      } catch (error) {
+        console.error('Order submission error:', error);
+        alert('Error: ' + (error.message || 'Failed to submit order. Please try again.'));
+        throw error; // Re-throw to be caught by the caller
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+    }
+    
+    // Form submission
+    async function submitOrder(e) {
+      e.preventDefault();
+
+      // Validate form first
+      const requiredFields = ['name', 'phone', 'city', 'area', 'address'];
+      for (const field of requiredFields) {
+        const fieldElement = document.getElementById(field);
+        if (!fieldElement || !fieldElement.value.trim()) {
+          alert(`Please fill in the ${field} field`);
+          return;
+        }
+      }
+
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const submitBtn = document.getElementById('submit-order');
+      const originalText = submitBtn.textContent;
+
+      try {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processing...';
+
+        // For cash on delivery, process order directly
+        if (paymentMethod === 'cod') {
+          await processOrder(false);
+          alert('Thank you for your order! We will contact you shortly to confirm the details.');
+          submitBtn.textContent = 'Order Placed!';
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 1500);
+        }
+        // For online payment, handle payment first
+        else if (paymentMethod === 'online') {
+          // For online payment, we'll handle it separately
+          document.getElementById('fastpay-button').click();
+        }
+      } catch (error) {
+        console.error('Order submission failed:', error);
+        alert('There was an error processing your order. Please try again.');
+      } finally {
+        if (paymentMethod === 'cod') {
+          // Don't reset button for COD as we're redirecting
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }
+    }
+    
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      const totalAmount = updateOrderSummary();
+      initFastPay();
+
+      // Disable form if no items
+      if (totalAmount === 0) {
+        const submitBtn = document.getElementById('submit-order');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'No items selected';
+        submitBtn.style.opacity = '0.5';
+        submitBtn.style.cursor = 'not-allowed';
+      }
+
+      // Add form submission listener
+      const orderForm = document.getElementById('orderForm');
+      if (orderForm) {
+        orderForm.addEventListener('submit', submitOrder);
+      }
+    });
+  </script>
+</body>
+</html>
