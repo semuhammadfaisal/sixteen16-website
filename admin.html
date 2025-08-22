@@ -53,19 +53,25 @@
       }
     }
 
-    function loadOrders() {
+    async function loadOrders() {
       const container = document.getElementById('ordersContainer');
       try {
-        // Load orders from localStorage
-        const orders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+        container.innerHTML = 'Loading orders...';
+
+        // Load orders from API
+        const response = await fetch('/api/orders');
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Failed to load orders');
+        }
+
+        const orders = result.orders || [];
 
         if (orders.length === 0) {
           container.innerHTML = '<div style="text-align: center; padding: 40px; color: #64748b;">No orders found. Orders will appear here when customers submit them.</div>';
           return;
         }
-
-        // Sort orders by timestamp (newest first)
-        orders.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
         container.innerHTML = orders.map((order, index) => createOrderCard(order, index)).join('');
       } catch (err) {
