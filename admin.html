@@ -34,6 +34,7 @@
     <header>
       <h1>sixteen16 Orders</h1>
       <div>
+        <button id="testBtn" class="btn" style="background: #059669; color: white; margin-right: 10px;">Add Test Order</button>
         <button id="clearBtn" class="btn" style="background: #ef4444; color: white; margin-right: 10px;">Clear All</button>
         <button id="refreshBtn" class="btn btn-primary">Refresh</button>
       </div>
@@ -45,33 +46,104 @@
     document.addEventListener('DOMContentLoaded', loadOrders);
     document.getElementById('refreshBtn').addEventListener('click', loadOrders);
     document.getElementById('clearBtn').addEventListener('click', clearOrders);
+    document.getElementById('testBtn').addEventListener('click', addTestOrder);
 
-    function clearOrders() {
+    function addTestOrder() {
+      const testOrder = {
+        name: 'Test Customer',
+        phone: '03001234567',
+        city: 'Islamabad',
+        address: 'Test Address, F-7 Sector',
+        items: [
+          {
+            name: 'Small Bottles (500ml)',
+            quantity: 2,
+            price: 'Rs 60 each',
+            total: 120
+          },
+          {
+            name: 'Large Bottles (1.5L)',
+            quantity: 1,
+            price: 'Rs 350 each',
+            total: 350
+          }
+        ],
+        total: 'Rs 470',
+        payment: 'Cash on Delivery',
+        notes: 'Test order for debugging',
+        timestamp: new Date().toISOString(),
+        id: 'TEST-' + Date.now()
+      };
+
+      // Add to localStorage
+      const orders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+      orders.push(testOrder);
+      localStorage.setItem('sixteen16_orders', JSON.stringify(orders));
+
+      // Reload orders
+      loadOrders();
+
+      console.log('Test order added:', testOrder);
+    }
+
+    async function clearOrders() {
       if (confirm('Are you sure you want to clear all orders? This cannot be undone.')) {
+        // Clear localStorage (always works)
         localStorage.removeItem('sixteen16_orders');
+
+        // Try to clear API data (if available)
+        try {
+          const response = await fetch('/api/orders', {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          });
+          if (response.ok) {
+            console.log('Orders cleared from API');
+          }
+        } catch (apiError) {
+          console.log('API not available for clearing');
+        }
+
         loadOrders();
       }
     }
 
     async function loadOrders() {
       const container = document.getElementById('ordersContainer');
+      let orders = [];
+
       try {
         container.innerHTML = 'Loading orders...';
 
-        // Load orders from API
-        const response = await fetch('/api/orders');
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(result.error || 'Failed to load orders');
+        // Try API first (for production)
+        try {
+          const response = await fetch('/api/orders');
+          if (response.ok) {
+            const result = await response.json();
+            if (result.success && result.orders) {
+              orders = result.orders;
+              console.log('Orders loaded from API');
+            }
+          }
+        } catch (apiError) {
+          console.log('API not available, using localStorage fallback');
         }
 
-        const orders = result.orders || [];
+        // Fallback to localStorage (for local development)
+        if (orders.length === 0) {
+          orders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+          console.log('Orders loaded from localStorage');
+        }
 
         if (orders.length === 0) {
           container.innerHTML = '<div style="text-align: center; padding: 40px; color: #64748b;">No orders found. Orders will appear here when customers submit them.</div>';
           return;
         }
+
+        // Sort orders by timestamp (newest first)
+        orders.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
         container.innerHTML = orders.map((order, index) => createOrderCard(order, index)).join('');
       } catch (err) {
@@ -136,43 +208,86 @@
     }
 
     function createOrderCard(order, index) {
+      // Debug: Log the order structure
+      console.log('Order data:', order);
+
+      // Handle different possible data structures
+      const orderData = order.order || order; // Handle nested structure
+      const customerData = order.customer || orderData;
+
+      // Extract order details with multiple fallback strategies
+      const name = customerData.name || orderData.name || 'N/A';
+      const phone = customerData.phone || orderData.phone || 'N/A';
+      const city = customerData.city || orderData.city || 'N/A';
+      const address = customerData.address || orderData.address || 'N/A';
+      const total = orderData.total || (orderData.order && orderData.order.total) || 'N/A';
+      const payment = orderData.payment || orderData.paymentMethod || (orderData.order && orderData.order.paymentMethod) || 'N/A';
+      const notes = orderData.notes || orderData.deliveryNotes || '';
+      const timestamp = orderData.timestamp || order.timestamp || 'N/A';
+      const orderId = orderData.id || order.id || String(index + 1).padStart(3, '0');
+
+      // Handle items with multiple strategies
+      let itemsDisplay = 'N/A';
+      if (orderData.items && Array.isArray(orderData.items) && orderData.items.length > 0) {
+        itemsDisplay = orderData.items.map(item => {
+          const quantity = item.quantity || 0;
+          const name = item.name || item.product || 'Unknown Item';
+          const price = item.price || '';
+          return `${quantity}x ${name}${price ? ` (${price})` : ''}`;
+        }).join(', ');
+      } else if (orderData.order && orderData.order.items) {
+        itemsDisplay = formatOrderItems(orderData.order);
+      } else {
+        // Try to extract from form data
+        const items = [];
+        if (orderData.small_quantity && orderData.small_quantity > 0) {
+          items.push(`${orderData.small_quantity}x Small Bottles`);
+        }
+        if (orderData.large_quantity && orderData.large_quantity > 0) {
+          items.push(`${orderData.large_quantity}x Large Bottles`);
+        }
+        if (items.length > 0) {
+          itemsDisplay = items.join(', ');
+        }
+      }
+
       return `
         <div class="order-card">
           <div class="order-header">
-            <strong>#${String(index + 1).padStart(3, '0')}</strong>
+            <strong>#${orderId}</strong>
             <span class="order-status status-pending">New</span>
           </div>
           <div class="detail">
-            <span class="detail-label">Customer:</span> ${order.name || 'N/A'}
+            <span class="detail-label">Customer:</span> ${name}
           </div>
           <div class="detail">
-            <span class="detail-label">Phone:</span> ${order.phone || 'N/A'}
+            <span class="detail-label">Phone:</span> ${phone}
           </div>
           <div class="detail">
-            <span class="detail-label">City:</span> ${order.city || 'N/A'}
+            <span class="detail-label">City:</span> ${city}
           </div>
           <div class="detail">
-            <span class="detail-label">Address:</span> ${order.address || 'N/A'}
+            <span class="detail-label">Address:</span> ${address}
           </div>
           <div class="detail">
-            <span class="detail-label">Total:</span> ${order.total || 'N/A'}
+            <span class="detail-label">Total:</span> ${total}
           </div>
           <div class="detail">
-            <span class="detail-label">Payment:</span> ${order.payment || 'N/A'}
+            <span class="detail-label">Payment:</span> ${payment}
           </div>
           <div class="detail">
-            <span class="detail-label">Items:</span> ${order.items ? order.items.map(item => `${item.quantity}x ${item.name}`).join(', ') : 'N/A'}
+            <span class="detail-label">Items:</span> ${itemsDisplay}
           </div>
-          ${order.notes ? `
+          ${notes ? `
           <div class="detail">
-            <span class="detail-label">Notes:</span> ${order.notes}
+            <span class="detail-label">Notes:</span> ${notes}
           </div>
           ` : ''}
           <div class="detail">
-            <span class="detail-label">Time:</span> ${order.timestamp ? new Date(order.timestamp).toLocaleString() : 'N/A'}
+            <span class="detail-label">Time:</span> ${timestamp !== 'N/A' ? new Date(timestamp).toLocaleString() : 'N/A'}
           </div>
           <details style="margin-top: 10px;">
-            <summary style="cursor: pointer; color: #666; font-size: 0.9em;">Raw Order Data</summary>
+            <summary style="cursor: pointer; color: #666; font-size: 0.9em;">Debug: Raw Order Data</summary>
             <pre style="background: #f5f5f5; padding: 8px; font-size: 0.8em; overflow-x: auto; margin-top: 5px;">${JSON.stringify(order, null, 2)}</pre>
           </details>
         </div>

@@ -3519,34 +3519,40 @@
           return;
         }
 
-        // Get cart data for order
+        // Calculate totals
+        const smallTotal = (window.cart && window.cart.small > 0) ? window.cart.small * 60 : 0;
+        const largeTotal = (window.cart && window.cart.large > 0) ? window.cart.large * 350 : 0;
+        const grandTotal = smallTotal + largeTotal;
+
+        // Create items array
+        const items = [];
+        if (window.cart && window.cart.small > 0) {
+          items.push({
+            name: 'Small Bottles (500ml)',
+            quantity: window.cart.small,
+            price: 'Rs 60 each',
+            total: smallTotal
+          });
+        }
+        if (window.cart && window.cart.large > 0) {
+          items.push({
+            name: 'Large Bottles (1.5L)',
+            quantity: window.cart.large,
+            price: 'Rs 350 each',
+            total: largeTotal
+          });
+        }
+
+        // Create simplified order data structure
         const orderData = {
-          customer: {
-            name: data.name,
-            phone: data.phone,
-            email: data.email || '',
-            address: `${data.address}, ${data.area || ''}, ${data.city}`
-          },
-          order: {
-            items: [
-              ...(window.cart && window.cart.small > 0 ? [{
-                product: 'sixteen16 Premium Water (500ml)',
-                quantity: window.cart.small,
-                price: 60,
-                total: window.cart.small * 60
-              }] : []),
-              ...(window.cart && window.cart.large > 0 ? [{
-                product: 'sixteen16 Premium Water (1.5L)',
-                quantity: window.cart.large,
-                price: 350,
-                total: window.cart.large * 350
-              }] : [])
-            ],
-            total: (window.cart ? (window.cart.small * 60) + (window.cart.large * 350) : 0),
-            paymentMethod: data.payment || 'cod',
-            paymentStatus: 'pending',
-            specialInstructions: data.notes || ''
-          },
+          name: data.name,
+          phone: data.phone,
+          city: data.city,
+          address: data.address,
+          items: items,
+          total: `Rs ${grandTotal}`,
+          payment: data.payment || 'Cash on Delivery',
+          notes: data.notes || '',
           timestamp: new Date().toISOString()
         };
 

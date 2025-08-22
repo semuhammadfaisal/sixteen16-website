@@ -49,7 +49,7 @@ function validateOrder(orderData) {
 export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
   // Handle preflight requests
@@ -114,7 +114,16 @@ export default async function handler(req, res) {
           total: order.total
         }
       });
-      
+
+    } else if (req.method === 'DELETE') {
+      // Clear all orders
+      await writeOrders([]);
+
+      return res.status(200).json({
+        success: true,
+        message: 'All orders cleared successfully'
+      });
+
     } else {
       // Method not allowed
       return res.status(405).json({
