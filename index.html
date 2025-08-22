@@ -3550,31 +3550,44 @@
           timestamp: new Date().toISOString()
         };
 
-        try {
-          const res = await fetch('/api/orders', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(orderData)
-          });
+        // Create WhatsApp message
+        const message = `🚰 *New Order - sixteen16*
 
-          if (!res.ok) throw new Error('Network error');
+👤 *Customer Details:*
+Name: ${orderData.name}
+Phone: ${orderData.phone}
+City: ${orderData.city}
+Address: ${orderData.address}
 
-          if (window.showToast) {
-            showToast('Order submitted! We will confirm shortly.');
-          }
-          form.reset();
-          // Reset cart
-          if (window.cart) {
-            window.cart.small = 0;
-            window.cart.large = 0;
-            if (window.updateCartDisplay) {
-              window.updateCartDisplay();
-            }
-          }
-        } catch (err) {
-          console.error(err);
-          if (window.showToast) {
-            showToast('Could not submit order. Please try WhatsApp.');
+📦 *Order Details:*
+${orderData.items.map(item => `• ${item.name} - ${item.quantity} bottles (${item.price})`).join('\n')}
+
+💰 *Total: ${orderData.total}*
+💳 *Payment: ${orderData.payment}*
+
+${orderData.notes ? `📝 *Notes:* ${orderData.notes}` : ''}
+
+⏰ *Order Time:* ${new Date().toLocaleString('en-PK', {timeZone: 'Asia/Karachi'})}`;
+
+        // Encode message for WhatsApp
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/923001234567?text=${encodedMessage}`;
+
+        // Open WhatsApp
+        window.open(whatsappUrl, '_blank');
+
+        // Show success message
+        if (window.showToast) {
+          showToast('Redirecting to WhatsApp to complete your order!');
+        }
+
+        // Reset form and cart
+        form.reset();
+        if (window.cart) {
+          window.cart.small = 0;
+          window.cart.large = 0;
+          if (window.updateCartDisplay) {
+            window.updateCartDisplay();
           }
         }
       });
