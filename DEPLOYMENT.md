@@ -16,8 +16,10 @@ sixteen16-web-f/
 ├── api/
 │   ├── orders.js      # Main orders API
 │   └── test.js        # Test endpoint
-├── index.html         # Main website
-├── admin.html         # Admin dashboard
+├── public/
+│   ├── index.html     # Main website
+│   ├── admin.html     # Admin dashboard
+│   └── assets/        # Images and static files
 ├── package.json       # Dependencies
 ├── vercel.json        # Vercel configuration
 └── DEPLOYMENT.md      # This file

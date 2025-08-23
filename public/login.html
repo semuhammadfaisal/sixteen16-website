@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - sixteen16</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --primary-light: #dbeafe;
+      --success: #10b981;
+      --error: #ef4444;
+      --warning: #f59e0b;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --text-tertiary: #9ca3af;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --bg-tertiary: #f3f4f6;
+      --border-light: #e5e7eb;
+      --border-medium: #d1d5db;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      background: var(--bg-primary);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: 48px;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--success), var(--warning));
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .login-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .login-subtitle {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      transition: all 0.2s ease;
+      background: var(--bg-primary);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .form-input.error {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .error-message {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: var(--error);
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .loading-spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .remember-me input {
+      margin-right: 8px;
+    }
+
+    .remember-me label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 32px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 32px 24px;
+        margin: 16px;
+      }
+
+      .login-title {
+        font-size: 24px;
+      }
+
+      .form-input {
+        font-size: 16px; /* Prevent zoom on iOS */
+      }
+    }
+
+    /* Animation */
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container fade-in">
+    <div class="logo-section">
+      <div class="logo">16</div>
+      <h1 class="login-title">Admin Login</h1>
+      <p class="login-subtitle">Access your sixteen16 dashboard</p>
+    </div>
+
+    <form id="loginForm">
+      <div class="error-message" id="errorMessage"></div>
+      
+      <div class="form-group">
+        <label for="email" class="form-label">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="form-input" 
+          placeholder="Enter your email"
+          required
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          class="form-input" 
+          placeholder="Enter your password"
+          required
+          autocomplete="current-password"
+        >
+      </div>
+
+      <div class="remember-me">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember me for 30 days</label>
+      </div>
+
+      <button type="submit" class="login-btn" id="loginBtn">
+        <span class="loading-spinner" id="loadingSpinner"></span>
+        <span id="btnText">Sign In</span>
+      </button>
+    </form>
+
+    <div class="footer-text">
+      © 2024 sixteen16. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    // Authentication credentials
+    const ADMIN_CREDENTIALS = {
+      email: 'sixteen16@gmail.com',
+      password: 'sixteen16'
+    };
+
+    // DOM elements
+    const loginForm = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const rememberMeCheckbox = document.getElementById('rememberMe');
+    const errorMessage = document.getElementById('errorMessage');
+    const loginBtn = document.getElementById('loginBtn');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const btnText = document.getElementById('btnText');
+
+    // Check if already logged in
+    function checkExistingAuth() {
+      const authToken = localStorage.getItem('sixteen16_auth_token');
+      const authExpiry = localStorage.getItem('sixteen16_auth_expiry');
+      
+      if (authToken && authExpiry) {
+        const now = new Date().getTime();
+        if (now < parseInt(authExpiry)) {
+          // Still valid, redirect to admin
+          window.location.href = '/admin.html';
+          return true;
+        } else {
+          // Expired, clear storage
+          localStorage.removeItem('sixteen16_auth_token');
+          localStorage.removeItem('sixteen16_auth_expiry');
+        }
+      }
+      return false;
+    }
+
+    // Show error message
+    function showError(message) {
+      errorMessage.textContent = message;
+      errorMessage.style.display = 'block';
+      emailInput.classList.add('error');
+      passwordInput.classList.add('error');
+    }
+
+    // Hide error message
+    function hideError() {
+      errorMessage.style.display = 'none';
+      emailInput.classList.remove('error');
+      passwordInput.classList.remove('error');
+    }
+
+    // Set loading state
+    function setLoading(loading) {
+      if (loading) {
+        loadingSpinner.style.display = 'inline-block';
+        btnText.textContent = 'Signing In...';
+        loginBtn.disabled = true;
+      } else {
+        loadingSpinner.style.display = 'none';
+        btnText.textContent = 'Sign In';
+        loginBtn.disabled = false;
+      }
+    }
+
+    // Generate auth token
+    function generateAuthToken() {
+      return btoa(Date.now() + Math.random().toString(36));
+    }
+
+    // Handle login
+    function handleLogin(email, password, rememberMe) {
+      setLoading(true);
+      hideError();
+
+      // Simulate API call delay
+      setTimeout(() => {
+        if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+          // Generate auth token
+          const authToken = generateAuthToken();
+          const expiryTime = rememberMe ? 
+            new Date().getTime() + (30 * 24 * 60 * 60 * 1000) : // 30 days
+            new Date().getTime() + (24 * 60 * 60 * 1000); // 24 hours
+
+          // Store auth data
+          localStorage.setItem('sixteen16_auth_token', authToken);
+          localStorage.setItem('sixteen16_auth_expiry', expiryTime.toString());
+
+          // Redirect to admin dashboard
+          window.location.href = '/admin.html';
+        } else {
+          setLoading(false);
+          showError('Invalid email or password. Please try again.');
+        }
+      }, 1000);
+    }
+
+    // Form submission
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      const rememberMe = rememberMeCheckbox.checked;
+
+      if (!email || !password) {
+        showError('Please fill in all fields.');
+        return;
+      }
+
+      handleLogin(email, password, rememberMe);
+    });
+
+    // Clear errors on input
+    [emailInput, passwordInput].forEach(input => {
+      input.addEventListener('input', hideError);
+    });
+
+    // Check for existing authentication on page load
+    if (!checkExistingAuth()) {
+      // Focus email input if not already authenticated
+      emailInput.focus();
+    }
+
+    // Handle enter key in password field
+    passwordInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        loginForm.dispatchEvent(new Event('submit'));
+      }
+    });
+  </script>
+</body>
+</html>
