@@ -3663,6 +3663,30 @@
               if (result.success) {
                 orderSubmitted = true;
                 console.log('Order submitted via API:', result.order);
+
+                // Also save to localStorage and storage API for cross-device sync
+                const orders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+                const order = {
+                  id: result.order?.id || 'ORD-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9),
+                  ...orderData,
+                  status: 'pending',
+                  timestamp: new Date().toISOString()
+                };
+                orders.unshift(order); // Add to beginning for newest first
+                localStorage.setItem('sixteen16_orders', JSON.stringify(orders));
+                console.log('Order saved to localStorage for admin sync');
+
+                // Also sync to storage API for cross-device persistence
+                try {
+                  await fetch('/api/storage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(order)
+                  });
+                  console.log('Order synced to storage API for cross-device access');
+                } catch (syncError) {
+                  console.log('Could not sync to storage API:', syncError.message);
+                }
               }
             }
           } catch (apiError) {

@@ -1127,12 +1127,19 @@
       }
     }, 5 * 60 * 1000);
 
-    // Auto-refresh orders every 30 seconds for real-time sync
+    // Auto-refresh orders every 10 seconds for real-time sync
     setInterval(() => {
       if (currentSection === 'dashboard' || currentSection === 'orders') {
         loadOrders();
       }
-    }, 30 * 1000);
+    }, 10 * 1000);
+
+    // Also check for new orders when page becomes visible (for mobile switching)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && (currentSection === 'dashboard' || currentSection === 'orders')) {
+        loadOrders();
+      }
+    });
 
     // Global state
     let currentSection = 'dashboard';
@@ -1382,6 +1389,13 @@
 
         if (response.ok) {
           console.log('Test order added via API');
+
+          // Also add to localStorage as backup
+          testOrder.id = 'ORD-' + Date.now();
+          const localOrders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+          localOrders.unshift(testOrder);
+          localStorage.setItem('sixteen16_orders', JSON.stringify(localOrders));
+
           showToast('Test data added successfully', 'success');
         } else {
           throw new Error('API request failed');
@@ -1389,10 +1403,12 @@
       } catch (error) {
         console.log('API not available, adding to localStorage:', error.message);
 
-        // Fallback to localStorage
+        // Fallback to localStorage only
         testOrder.id = 'ORD-' + Date.now();
-        orders.push(testOrder);
-        localStorage.setItem('sixteen16_orders', JSON.stringify(orders));
+        const localOrders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+        localOrders.unshift(testOrder);
+        localStorage.setItem('sixteen16_orders', JSON.stringify(localOrders));
+
         showToast('Test data added locally', 'success');
       }
 
@@ -1756,7 +1772,12 @@
 
         let loadedOrders = [];
 
-        // Always try API first for real-time sync across devices
+        // Enhanced cross-device sync approach
+        let apiOrders = [];
+        let localOrders = [];
+        let storageOrders = [];
+
+        // 1. Try main API first
         try {
           const response = await fetch('/api/orders');
           if (response.ok) {
@@ -1764,28 +1785,72 @@
 
             // Handle different API response formats
             if (result.success && result.orders) {
-              // Local server format: { success: true, orders: [...] }
-              loadedOrders = result.orders;
-              console.log('Orders loaded from local API:', loadedOrders.length);
+              apiOrders = result.orders;
+              console.log('Orders loaded from main API:', apiOrders.length);
             } else if (Array.isArray(result)) {
-              // Vercel API format: [...]
-              loadedOrders = result;
-              console.log('Orders loaded from Vercel API:', loadedOrders.length);
-            } else {
-              throw new Error('Unexpected API response format');
+              apiOrders = result;
+              console.log('Orders loaded from Vercel API:', apiOrders.length);
             }
-
-            // Sync API data to localStorage for offline access
-            localStorage.setItem('sixteen16_orders', JSON.stringify(loadedOrders));
-          } else {
-            throw new Error('API response not ok');
           }
         } catch (apiError) {
-          console.log('API not available, using localStorage fallback:', apiError.message);
+          console.log('Main API not available:', apiError.message);
+        }
 
-          // Fallback to localStorage only if API fails
-          loadedOrders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
-          console.log('Orders loaded from localStorage:', loadedOrders.length);
+        // 2. Try storage API for cross-device persistence
+        try {
+          const storageResponse = await fetch('/api/storage');
+          if (storageResponse.ok) {
+            const storageResult = await storageResponse.json();
+            if (storageResult.success && storageResult.orders) {
+              storageOrders = storageResult.orders;
+              console.log('Orders loaded from storage API:', storageOrders.length);
+            }
+          }
+        } catch (storageError) {
+          console.log('Storage API not available:', storageError.message);
+        }
+
+        // 3. Always load from localStorage as backup
+        try {
+          localOrders = JSON.parse(localStorage.getItem('sixteen16_orders') || '[]');
+          console.log('Orders loaded from localStorage:', localOrders.length);
+        } catch (localError) {
+          console.log('Error loading from localStorage:', localError.message);
+          localOrders = [];
+        }
+
+        // 4. Merge all sources: Storage API > Main API > localStorage
+        const allOrders = [...storageOrders, ...apiOrders, ...localOrders];
+        const orderMap = new Map();
+
+        // Deduplicate by ID, keeping the most recent version
+        allOrders.forEach(order => {
+          if (order && order.id) {
+            const existing = orderMap.get(order.id);
+            if (!existing || new Date(order.timestamp) > new Date(existing.timestamp)) {
+              orderMap.set(order.id, order);
+            }
+          }
+        });
+
+        loadedOrders = Array.from(orderMap.values());
+        console.log('Total merged orders after deduplication:', loadedOrders.length);
+
+        // 5. Sync back to all storage locations
+        localStorage.setItem('sixteen16_orders', JSON.stringify(loadedOrders));
+
+        // Sync to storage API if we have new orders
+        if (loadedOrders.length > storageOrders.length) {
+          try {
+            await fetch('/api/storage', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ orders: loadedOrders })
+            });
+            console.log('Synced orders to storage API');
+          } catch (syncError) {
+            console.log('Could not sync to storage API:', syncError.message);
+          }
         }
 
         // Sort orders by timestamp (newest first)

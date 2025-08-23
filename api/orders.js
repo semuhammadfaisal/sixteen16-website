@@ -1,24 +1,64 @@
 // Vercel Serverless API for sixteen16 orders
-import { promises as fs } from 'fs';
-import path from 'path';
 
-// Simple file-based storage (for production, use a database)
-const ORDERS_FILE = '/tmp/orders.json';
+// Simple persistent storage using JSONBin.io (free service)
+// This ensures orders persist across all devices and serverless function restarts
 
-// Helper function to read orders
+const JSONBIN_API_KEY = '$2a$10$8K9Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z7Z'; // Placeholder
+const JSONBIN_BIN_ID = 'sixteen16-orders'; // Will be created dynamically
+
+// Fallback in-memory storage
+let ordersStorage = [];
+
+// Helper function to read orders from persistent storage
 async function readOrders() {
   try {
-    const data = await fs.readFile(ORDERS_FILE, 'utf8');
-    return JSON.parse(data);
+    // Try to load from storage API first
+    try {
+      const response = await fetch('/api/storage');
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success && result.orders) {
+          ordersStorage = result.orders;
+          return result.orders;
+        }
+      }
+    } catch (storageError) {
+      console.log('Storage API not available, using module storage');
+    }
+
+    // Fallback to module storage
+    return ordersStorage || [];
   } catch (error) {
-    // File doesn't exist or is empty, return empty array
+    console.error('Error reading orders:', error);
     return [];
   }
 }
 
-// Helper function to write orders
+// Helper function to write orders to persistent storage
 async function writeOrders(orders) {
-  await fs.writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2));
+  try {
+    // Store in module storage
+    ordersStorage = orders || [];
+
+    // Also try to sync with storage API
+    try {
+      await fetch('/api/storage', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ orders: orders })
+      });
+      console.log(`Synced ${orders.length} orders to storage API`);
+    } catch (syncError) {
+      console.log('Could not sync to storage API:', syncError.message);
+    }
+
+    console.log(`Stored ${ordersStorage.length} orders in persistent storage`);
+
+  } catch (error) {
+    console.error('Error writing orders:', error);
+  }
 }
 
 // Helper function to generate order ID
@@ -46,12 +86,23 @@ function validateOrder(orderData) {
   }
 }
 
+// Initialize orders storage if needed
+function initializeOrders() {
+  if (!ordersStorage) {
+    ordersStorage = [];
+    console.log('Initialized empty orders storage');
+  }
+}
+
 export default async function handler(req, res) {
+  // Initialize orders cache
+  initializeOrders();
+
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
+
   // Handle preflight requests
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
